@@ -1,0 +1,61 @@
+
+/*html,body {
+    width:100vw;
+    height: 100vh;
+    margin: 0;
+}*/
+
+.video-back {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+    
+.video-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+  
+video{
+  	width: 100%;
+  	height: auto;
+}
+
+.cont-img{
+	/*padding: .75rem .75rem 0 0 !important;*/
+	padding: .75rem 0 0 0	 !important;
+}
+
+footer, nav{
+    background:#982246 !important;
+}
+
+.modal { 
+    width: 30% !important ;
+    height: 45% !important ;
+ } 
+
+.btn-modal:hover{
+    color: #b59a69 !important;
+}
+
+@media only screen and (max-width: 700px) {
+    .modal { 
+        width: 90% !important ;
+        height: 45% !important ;
+     } 
+  }
+
+
+#elemento1{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
