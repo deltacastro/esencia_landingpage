@@ -12,334 +12,144 @@
 </head>
 
 <body>
-	<div class="navbar-fixed">
-		<nav>
-			<div class="nav-wrapper container">
-				<a href="#!" class="brand-logo"> Esencia Tabasco </a>
-				<a href="" data-target="menu" class="sidenav-trigger">
-					<i class="material-icons">menu</i>
-				</a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="">Enlace1</a></li>
-					<li><a href="">Enlace2</a></li>
-					<li>
-						<a href="" class="dropdown-trigger" data-target="id_submenu1">Opciones
-							<i class="material-icons right">arrow_drop_down</i>
-						</a>
-					</li>
-					<li>
-						<button class="btn waves-effect waves-teal modal-trigger blue lighten-4 black-text btn-modal" data-target="modal-sesion">Iniciar sesión</button>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-	<ul class="sidenav" id="menu">
-		<li><a href="">Enlace1</a></li>
-		<li><a href="">Enlace2</a></li>
-		<li>
-			<button class="btn waves-effect waves-teal modal-trigger blue lighten-4 black-text btn-modal" data-target="modal-sesion">Iniciar sesión</button>
-		</li>
-		<li>
-			<a href="#" class="dropdown-trigger" data-target="id_submenu1">Opciones
-				<i class="material-icons right">arrow_drop_down</i>
-			</a>
-		</li>
-	</ul>
-	<ul id="id_submenu1"  class="dropdown-content">
-		<li><a href="#">Opcion 1</a></li>
-		<li><a href="#">Opcion 2</a></li>
-		<li class="divider"></li>
-		<li><a href="#">Opcion 3</a></li>
-	</ul>
-
-	<div class="section-container">
-		<div id="modal-sesion" class="modal">
-			<div class="modal-header">
-				<h3 class="title"></h3>
-			</div>
-			<div class="modal-content">
-				<div class="input-field">
-					<i class="material-icons prefix">account_circle</i>
-					<input class="validate" type="text" name="rfc" id="rfc" placeholder="Ingresar RFC" required="">
-					<label for="nombre">RFC:</label>
+	<!-- <header>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper container">
+					<a href="#!" class="brand-logo"> Esencia Tabasco .v1</a>
+					<a href="" data-target="menu" class="sidenav-trigger">
+						<i class="material-icons">menu</i>
+					</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="">Enlace1</a></li>
+						<li><a href="">Enlace2</a></li>
+						<li>
+							<a href="" class="dropdown-trigger" data-target="id_submenu1">Opciones
+								<i class="material-icons right">arrow_drop_down</i>
+							</a>
+						</li>
+						<li>
+							<button
+								class="btn waves-effect waves-teal modal-trigger blue lighten-4 black-text btn-modal"
+								data-target="modal-sesion">Iniciar sesión</button>
+						</li>
+					</ul>
 				</div>
-				<div class="input-field">
-					<i class="material-icons prefix">lock</i>
-					<input class="validate" type="password" name="password" id="rfc" placeholder="Ingresar password" required="">
-					<label for="nombre">PASSWORD:</label>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<label for="" class="left-align">
-					<input type="checkbox" />
-					<span class="black-text">Recuerdame</span>
-				</label>
-				<label for=""></label>
-				<a href="" class="btn modal-close blue lighten-4 black-text black-text btn-modal">Iniciar sesíon</a>
-			</div>
+			</nav>
 		</div>
-	</div>
-	<section class="video-back">
-		<div class="video-container">
-			<video autoplay loop class="embed-responsive-item">
+	</header> -->
+	<main>
+		<section id="video-container">
+			<video autoplay loop id="video-background">
 				<source src="static/videos/Top_Highway.mp4" type="video/mp4">
 				<source src="static/videos/Top_Highway.webm" type="video/webm">
 				<source src="static/videos/Top_Highway.ogv" type="video/ogg">
 			</video>
-		</div>
-	</section>
-
-	<section id="sec1" style="background: #DCDCDC;">
-		<div class="row sect1 aos-item" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine">
-			<div class="col l6 cont-img">
-				<img class="responsive-img" src="static/css/imagenes/index_section1.png">
-			</div>
-			<div class="cont1 col l6" data-aos="fade-right" data-aos-offset="300">
-				<h2>300</h2>
-				<h4>Empresas registradas</h4>
-				<p>Los productos que ya son parte del programa y sus beneficios </p>
-				<div id="elemento1">
-						<i class="material-icons">mood</i>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-
-	<section style="background: #FFE4C4;">
-		<div class="row sect2">
-			<div class="cont2 col l6" data-aos="fade-right" data-aos-offset="300">
-				<h2></h2>
-				<h4>IMPULSANDO A MIPyME's</h4>
-				<p>Hemos equipado a productores tabasqueños con maquinaria para mejorar sus procesos de producción</p>
-			</div>
-			<div class="col l6 cont-img" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine">
-				<img class="responsive-img" src="static/css/imagenes/FB_IMG_15711570797644995.jpg">
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<div class="row sect3">
-			<div class="col l6 cont-img" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine">
-				<img class="responsive-img" src="static/css/imagenes/BeFunky-collage.jpg">
-			</div>
-			<div class="cont1 col l6" data-aos="fade-left" data-aos-offset="300">
-				<h2>Distribuye</h2>
-				<h4>Tus productos</h4>
-				<p>Acercate a nosotros te orientamos para que puedas distribuir tus productos</p>
-			</div>
-		</div>
-	</section>
-
-	<section class="asesorias">
-		<div class="row sect4">
-			<div class="col l6">
-				<div class="row" data-aos="fade-up" data-aos-duration="2000">
-					<div class="col l2">
-						<i class="medium material-icons">assignment_ind</i>
-					</div>
-					<div class="col l10">
-						<h5 class="header">Asesorías y registro a Esencia Tabasco</h5>
-						<p>Orientacion en los requisitos</p>
-						<p>
-							Horarios de atencion: Lunes a Viernes de 9am a 3pm
-						</p>
+		</section>
+		<section id="parent-section">
+			<section class="section-container">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 border-container z-depth-2" data-aos="fade-right" data-aos-duration="500"
+							data-aos-easing="ease" data-aos-delay="400">
+							<img src="static/imagenes/index_section1.png" alt="" class="responsive-img">
+						</div>
+						<div class="col l6 section-text-container-right " data-aos="fade-right" data-aos-duration="500"
+							data-aos-easing="ease" data-aos-delay="700">
+							<h1 class="center-align text-header">300</h1>
+							<h3 class="center-align">Empresas registradas</h3>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col l6">
-				<div class="row" data-aos="fade-up" data-aos-duration="3000">
-					<div class="col l2">
-						<i class="medium material-icons">assignment_ind</i>
-					</div>
-					<div class="col l10">
-						<h5 class="header">Asesoría y registro de Marcas</h5>
-						<p>Orientacion en los requisitos</p>
-						<p>
-							Horarios de atencion: Lunes a Miercoles de 10 a.m a 2 p.m
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col l6">
-				<div class="row" data-aos="fade-up" data-aos-duration="2100">
-					<div class="col l2">
-						<i class="medium material-icons">assignment_ind</i>
-					</div>
-					<div class="col l10">
-						<h5 class="header">Asesoría y registro de Código de Barras</h5>
-						<p>Orientacion en los requisitos</p>
-						<p>
-							Horarios de atencion: Lunes a Jueves de 11 a.m a 2 p.m
-						</p>
+			</section>
+			<section class="section-container section-container-color">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 section1-text-container section-text-container-left" data-aos="fade-left"
+							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="700">
+							<h1 class="center-align text-header">IMPULSANDO A MIPyME's</h1>
+							<h5>Hemos equipado a productores tabasqueños con maquinaria para mejorar sus procesos de
+								producción.</h5>
+						</div>
+						<div class="col l6 border-container z-depth-2" data-aos="fade-left" data-aos-duration="500"
+							data-aos-easing="ease" data-aos-delay="400">
+							<img src="static/imagenes/FB_IMG_15711570797644995.jpg" alt="" class="responsive-img">
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col l6">
-				<div class="row" data-aos="fade-up" data-aos-duration="2900">
-					<div class="col l2">
-						<i class="medium material-icons">assignment_ind</i>
-					</div>
-					<div class="col l10">
-						<h5 class="header">Asesoría y registro de Código de Barras</h5>
-						<p>Orientacion en los requisitos</p>
-						<p>
-							Horarios de atencion: Martes y Jueves de 10 a.m a 2 p.m
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<div class="row sect5">
-			<div class="col l8">
-				<h5>Enterate</h5>
-				<div class="row">
-					<div class="col l3">
-						<img class="responsive-img" src="static/css/imagenes/FB_IMG_15711567829806009.jpg" alt="">
-					</div>
-					<div class="col l9">
-						<p>Seguimos trabajando MIPYMES</p>
-						<p>Esencia Tabasco fortaleciendo a productores</p>
+			</section>
+			<section class="section-container">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 border-container z-depth-2" data-aos="fade-right" data-aos-duration="500"
+							data-aos-easing="ease" data-aos-delay="400">
+							<img src="static/imagenes/BeFunky-collage.jpg" alt="" class="responsive-img">
+						</div>
+						<div class="col l6 section1-text-container section-text-container-right" data-aos="fade-right"
+							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="700">
+							<h1 class="center-align text-header">DISTRIBUYE TUS PRODUCTOS</h1>
+							<h5 class="center-align">Acércate a nosotros, te orientamos para que puedas distribuir tus
+								productos</h5>
+						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col l3">
-						<img class="responsive-img" src="static/css/imagenes/FB_IMG_15711567829806009.jpg" alt="">
-					</div>
-					<div class="col l9">
-						<p>Seguimos trabajando MIPYMES</p>
-						<p>Esencia Tabasco fortaleciendo a productores</p>
-					</div>
-				</div>
-			</div>
-			<div class="col l4">
-				<h5>Eventos</h5>
-				<div class="row">
-					<div class="col l4">
-						<img class="responsive-img" src="static/css/imagenes/FB_IMG_15711570854067992.jpg">
-					</div>
-					<div class="col l8">
-						<p>Entrega de equipos</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col l4">
-						<img class="responsive-img" src="static/css/imagenes/FB_IMG_15711570797644995.jpg">
-					</div>
-					<div class="col l8">
-						<p>Entrega de equipos</p>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col l4">
-						<img class="responsive-img" src="static/css/imagenes/FB_IMG_15711570797644995.jpg">
-					</div>
-					<div class="col l8">
-						<p>Entrega de equipos</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col l4">
-						<img class="responsive-img" src="static/css/imagenes/FB_IMG_15711570797644995.jpg">
-					</div>
-					<div class="col l8">
-						<p>Entrega de equipos</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col l4">
-						<img class="responsive-img" src="static/css/imagenes/FB_IMG_15711570797644995.jpg">
-					</div>
-					<div class="col l8">
-						<p>Entrega de equipos</p>
+			</section>
+			<section class="section-container">
+				<h1 class="text-header center-align" data-aos="zoom-in"
+				data-aos-duration="500" data-aos-easing="ease">AESORÍAS Y TRÁMITES</h1>
+				<div class="divider"></div>
+			</section>
+			<section class="section-container">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 advisory-container" data-aos="fade-up"
+						data-aos-duration="500" data-aos-easing="ease" data-aos-delay="300">
+							<div class="row">
+								<img src="static/imagenes/handshake.svg" alt="" class="svg-advisory">
+							</div>
+							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
+								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
+								nihil non atque nostrum optio.</p>
+						</div>
+						<div class="col l6 advisory-container" data-aos="fade-up"
+						data-aos-duration="500" data-aos-easing="ease" data-aos-delay="500">
+							<div class="row">
+								<img src="static/imagenes/handshake.svg" alt="" class="svg-advisory">
+							</div>
+							<h6 class="text-header"><b>ASESORÍA Y REGISTRO DE MARCAS</b></h6>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis assumenda facilis
+								veniam debitis explicabo similique accusantium quas atque saepe repellat error
+								aspernatur tempora tempore, sapiente culpa dolorem, qui corporis voluptates!</p>
+						</div>
+						<div class="col l6 advisory-container" data-aos="fade-up"
+						data-aos-duration="500" data-aos-easing="ease" data-aos-delay="300">
+							<div class="row">
+								<img src="static/imagenes/handshake.svg" alt="" class="svg-advisory">
+							</div>
+							<h6 class="text-header"><b>ASESORÍA Y TRÁMITES PARA CÓDIGO DE BARRAS</b></h6>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid illum vel veniam natus
+								animi commodi perferendis quod accusantium, reprehenderit dolorum unde. Facilis porro,
+								laboriosam unde itaque tempora blanditiis! Vero, sed?</p>
+						</div>
+						<div class="col l6 advisory-container" data-aos="fade-up"
+						data-aos-duration="500" data-aos-easing="ease" data-aos-delay="500">
+							<div class="row">
+								<img src="static/imagenes/handshake.svg" alt="" class="svg-advisory">
+							</div>
+							<h6 class="text-header"><b>ASESORÍA DE DISEÑO DE MARCAS</b></h6>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt minima voluptates,
+								sint et voluptas repellat ullam, rem id delectus qui modi quae. Enim, non. Eligendi
+								aspernatur nihil debitis veniam maiores.</p>
+						</div>
 					</div>
 				</div>
-
-
-			</div>
-		</div>
-	</section>
-	<footer class="page-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col l6 s12">
-					<img src="static/css/imagenes/SEDEC_logo-04.png"  width="190" height="150" alt="">
-				</div>
-				<div class="col l4 offset-l2 s12">
-					<!-- <h5 class="white-text">Links</h5>
-					<ul>
-						<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-					</ul> -->
-				</div>
-			</div>
-		</div>
-		<div class="footer-copyright">
-			<div class="container">
-				©  | Política de privacidad
-				Sitio diseñado por la Secretaría para el Desarrollo Económico y la Competitividad
-				<a class="grey-text text-lighten-4 right" href="#!">Avsio de privacidad</a>
-			</div>
-		</div>
-	</footer>
-
-
-
-
-
-
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+			</section>
+		</section>
+	</main>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function (){
-		  M.AutoInit();
-		});
-		
-		document.addEventListener('DOMContentLoaded', function () {
-			var elems2 = document.querySelectorAll('.modal');
-			var instances2 = M.Modal.init(elems2,{
-				opacity: .9,
-			});
-		});
-		
-		document.addEventListener('DOMContentLoaded', function() {
-		    var elems = document.querySelectorAll('.dropdown-trigger');
-    		//var instances = M.Dropdown.init(elems, option);
-			var instances = M.Dropdown.init(elems);
-  		});
-
-		
-
-	</script>
 	<script>
-	/*Animaciones*/
-		myMove();
 		AOS.init();
-
-	function myMove() {
-		var elem = document.getElementById("elemento1");
-		var pos = 0;
-		var id = setInterval(frame, 15);
-		function frame() {
-			if (pos == 750) {
-				clearInterval(id);
-				myMove();
-			} else {
-				pos++;
-				//elem.style.top = pos + "px";
-				elem.style.right = pos + "px";
-			}
-		}
-	}
 	</script>
 </body>
 
