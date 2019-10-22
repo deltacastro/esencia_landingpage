@@ -68,6 +68,11 @@ img{
     width: 80px;
 }
 
+.article-notice{
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
 /* .video-back {
     position: relative;
     width: 100%;
