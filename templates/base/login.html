@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Esencia Landing Page | Inicio{% endblock %}
+{% block extrastyles %}
+<style>
+    div#login {
+        padding: 40px 25px 25px 20px;
+    }
+
+    div#loginP {
+        margin-top: 7%;
+    }
+
+    button.btn {
+        width: 100%;
+        background-color: #B29460;
+    }
+
+    button.btn:hover {
+        background-color: #C19A6B;
+    }
+
+    button.btn:focus {
+        background-color: #C19A6B;
+    }
+
+    .input-field input[type=text]:focus {
+        border-bottom: 1px solid #b3935e !important;
+        box-shadow: 0 1px 0 0 #b3935e !important;
+    }
+
+    .input-field input[type=text]:focus+label {
+        color: #b3935e !important;
+    }
+
+    .input-field input[type=password]:focus {
+        border-bottom: 1px solid #b3935e !important;
+        box-shadow: 0 1px 0 0 #b3935e !important;
+    }
+
+    .input-field input[type=password]:focus+label {
+        color: #b3935e !important;
+    }
+
+    .logo-rotation {
+        -webkit-animation: rotation 10s infinite linear;
+    }
+
+    @-webkit-keyframes rotation {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+
+        to {
+            -webkit-transform: rotate(359deg);
+        }
+    }
+</style>
+{% endblock %}
+{% block nabvar %}{% endblock %}
+{% block maincontent %}
+<div class="container">
+    <div class="row">
+        <div class="col offset-l4 l4 z-depth-1 animated fadeIn" id="loginP">
+            <div id="login">
+                <div class="row">
+                    <div class="center-align">
+                        <img class="responsive-img logo-rotation" src="{% static 'images/logo-esencia-dorado.png' %}" width="50%"
+                            alt="">
+                    </div>
+                </div>
+                <form action="" method="post" id="formLogin">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        <input type="text" name="username" id="username">
+                        <label for="username">Usuario</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" id="password">
+                        <label for="password">Contraseña</label>
+                    </div>
+                    <div class="row center-align">
+                        <button class="btn" id="accessLogin">Acceder</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

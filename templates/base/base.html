@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'animate/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'sweetalert/sweetalert2.min.css' %}">
+    {% block extralinks %}
+    {% endblock %}
+    {% block extrastyles %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block nabvar %}
+    <header>
+        <nav class="blue">
+            <div class="nav-wrapper">
+                <div class="brand-logo center">
+                    <div class="img-logo"></div>
+                </div>
+                <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large hide-on-med-and-down"><i
+                        class="material-icons left">account_circle</i>{{user.get_full_name|upper}}</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons left">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    {% block extraitemnavbar %}
+                    {% endblock %}
+                    <li><a href="#!"><i class="material-icons right">exit_to_app</i>Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {% endblock %}
+    {% block maincontent %}
+    {% endblock %}
+    {% block powered %}
+    <footer class="center-align white">
+        <br><br>
+        <span class="grey-text lighten-2">© Powered by Unidad de Apoyo Técnico e Informático</span>
+    </footer>
+    {% endblock %}
+    <script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+    <script src="{% static 'sweetalert/sweetalert2.min.js' %}"></script>
+    {% include 'base/validaciones.html' %}
+    {% block extrafunctions %}
+    {% endblock %}
+
+</body>
+
+</html>

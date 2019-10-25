@@ -1,0 +1,8 @@
+{% extends 'base/base.html' %}
+{% block maincontent %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ fevento.as_p }}
+    <button type="submit">Ok</button>
+</form>
+{% endblock %}

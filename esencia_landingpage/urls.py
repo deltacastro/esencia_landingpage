@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.views import main
+from apps.page.views import vLogin, vLogout, vRegistroEventos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main),
+    path('evento/agregar', vRegistroEventos, name = 'rEvento'),
+    path('login/', vLogin, name = 'login'),
+    path('logout/', vLogout, name = 'logout'),
 ]
