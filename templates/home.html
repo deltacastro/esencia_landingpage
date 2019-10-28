@@ -4,14 +4,12 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -23,14 +21,14 @@
 			<nav>
 				<div class="nav-wrapper container">
 					<a href="#!" class="brand-logo"> <img class="responsive-img logo-img"
-							src="{% static 'images/esenciatabasco_home.png'%}" alt=""></a>
+							src="{% static 'images/logo-esencia-blanco.png'%}" alt=""></a>
 					<a href="" data-target="menu" class="sidenav-trigger">
 						<i class="material-icons">menu</i>
 					</a>
 					<ul class="right hide-on-med-and-down">
-						<li><a href="">Asesorías y Trámites</a></li>
-						<li><a href="">Noticias</a></li>
-						<li><a href="">Contactanos</a></li>
+						<li><a href="#asesorias" uk-scroll>Asesorías y Trámites</a></li>
+						<li><a href="#noticias" uk-scroll>Noticias y Eventos</a></li>
+						<li><a href="#contactanos" uk-scroll>Contáctanos</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -39,28 +37,26 @@
 	<main>
 		<section id="video-container">
 			<video autoplay loop id="video-background">
-				<source src="{% static 'videos/Top_Highway.webm' %}" type="video/webm">
+				<source src="{% static 'videos/videoprueba.mp4' %}" type="video/webm">
 			</video>
 			<div class="header-overlay"></div>
-			<div class="text-video" data-aos="fade-up" data-aos-duration="500"
-			data-aos-easing="ease">
-				<p>Comercializa y promueve tu marca con el distintivo <b class="text-header">Esencia Tabasco</b>, para fortalecer
+			<div class="text-video" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease">
+				<p>Comercializa y promueve tu marca con el distintivo <b class="text-header">Esencia Tabasco</b>, para
+					fortalecer
 					el posicionamiento y lanzamiento de tu empresa </p>
-				<a class="btn waves-red green" style="background-color: #C19A6B !important;" href="#">Registrate</a>
+				<a class="btn waves-red green" href="#">Regístrate</a>
 			</div>
 		</section>
-
-
 		<section id="parent-section">
 			<section class="section-container">
 				<div class="container">
 					<div class="row">
-						<div class="col l6 border-container z-depth-2" data-aos="fade-right" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="400">
+						<div class="col l6 offset-m2 m8 s12 border-container z-depth-2" data-aos="fade-right"
+							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="400">
 							<img src="{% static 'images/index_section1.png' %}" alt="" class="responsive-img">
 						</div>
-						<div class="col l6 section-text-container-right " data-aos="fade-right" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="700">
+						<div class="col l6 m12 s12" data-aos="fade-left"
+							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="700">
 							<h1 class="center-align text-header">300</h1>
 							<h5 class="center-align">Empresas registradas</h5>
 						</div>
@@ -70,14 +66,14 @@
 			<section class="section-container section-container-color">
 				<div class="container">
 					<div class="row">
-						<div class="col l6 section1-text-container section-text-container-left" data-aos="fade-left"
-							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="700">
+						<div class="col l6 m12 s12" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease"
+							data-aos-delay="700">
 							<h1 class="center-align text-header">IMPULSANDO A MIPyME's</h1>
-							<h5>Hemos equipado a productores tabasqueños con maquinaria para mejorar sus procesos de
+							<h5 style="font-size:2vw !important;">Hemos equipado a productores tabasqueños con maquinaria para mejorar sus procesos de
 								producción.</h5>
 						</div>
-						<div class="col l6 border-container z-depth-2" data-aos="fade-left" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="400">
+						<div class="col l6 offset-m2 m8 s12 border-container z-depth-2" data-aos="fade-left"
+							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="400">
 							<img src="{% static 'images/FB_IMG_15711570797644995.jpg' %}" alt="" class="responsive-img">
 						</div>
 					</div>
@@ -86,12 +82,12 @@
 			<section class="section-container">
 				<div class="container">
 					<div class="row">
-						<div class="col l6 border-container z-depth-2" data-aos="fade-right" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="400">
+						<div class="col l6 offset-m2 m8 s12 border-container z-depth-2" data-aos="fade-right"
+							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="400">
 							<img src="{% static 'images/BeFunky-collage.jpg'%}" alt="" class="responsive-img">
 						</div>
-						<div class="col l6 section1-text-container section-text-container-right" data-aos="fade-right"
-							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="700">
+						<div class="col l6 m12 s12" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease"
+							data-aos-delay="700">
 							<h1 class="center-align text-header">DISTRIBUYE TUS PRODUCTOS</h1>
 							<h5 class="center-align">Acércate a nosotros, te orientamos para que puedas distribuir tus
 								productos</h5>
@@ -99,7 +95,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section-container">
+			<section class="section-container" id="asesorias">
 				<h1 class="text-header center-align" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease">
 					AESORÍAS Y TRÁMITES</h1>
 				<div class="divider"></div>
@@ -107,7 +103,7 @@
 			<section class="section-container">
 				<div class="container">
 					<div class="row">
-						<div class="col l6 advisory-container" data-aos="fade-up" data-aos-duration="500"
+						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="300">
 							<div class="row">
 								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
@@ -117,7 +113,7 @@
 								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
 								nihil non atque nostrum optio.</p>
 						</div>
-						<div class="col l6 advisory-container" data-aos="fade-up" data-aos-duration="500"
+						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="500">
 							<div class="row">
 								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
@@ -127,7 +123,7 @@
 								veniam debitis explicabo similique accusantium quas atque saepe repellat error
 								aspernatur tempora tempore, sapiente culpa dolorem, qui corporis voluptates!</p>
 						</div>
-						<div class="col l6 advisory-container" data-aos="fade-up" data-aos-duration="500"
+						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="300">
 							<div class="row">
 								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
@@ -137,7 +133,7 @@
 								animi commodi perferendis quod accusantium, reprehenderit dolorum unde. Facilis porro,
 								laboriosam unde itaque tempora blanditiis! Vero, sed?</p>
 						</div>
-						<div class="col l6 advisory-container" data-aos="fade-up" data-aos-duration="500"
+						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="500">
 							<div class="row">
 								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
@@ -150,16 +146,14 @@
 					</div>
 				</div>
 			</section>
-			<section class="section-container">
+			<section class="section-container" id="noticias">
 				<div class="container">
 					<div class="row">
 						<h4 class="text-header">ENTÉRATE</h4><br>
-						<div class="col l8">
-
+						<div class="col l8 s12">
 							<div class="row">
-								<article class="article-notice col l6">
-
-									<div class="uk-inline  z-depth-2">
+								<article class="article-notice col l6 m6 s12">
+									<div class="uk-inline  z-depth-2 center-align">
 										<img src="{% static 'images/FB_IMG_15711571202497070.jpg' %}" alt=""
 											class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
@@ -167,8 +161,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="article-notice col l6">
-
+								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
 										<img src="{% static 'images/FB_IMG_15711571202497070.jpg' %}" alt=""
 											class="responsive-img">
@@ -177,8 +170,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="article-notice col l6">
-
+								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
 										<img src="{% static 'images/FB_IMG_15711571202497070.jpg' %}" alt=""
 											class="responsive-img">
@@ -187,8 +179,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="article-notice col l6">
-
+								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
 										<img src="{% static 'images/FB_IMG_15711570797644995.jpg' %}" alt=""
 											class="responsive-img">
@@ -198,36 +189,92 @@
 									</div>
 								</article>
 							</div>
+							<h5 class="text-header">PRÓXIMOS EVENTOS</h5><br>
+							<div class="container">
+								<div class="row">
+									<article class="row article-event">
+										<div class="col l3">20 SEPT 2019</div>
+										<div class="col l9">
+											<h6><b>Título del evento ldfjldsjf</b></h6>
+											<h6>Auditorio de la sedec</h6>
+											<h6>9:00 pm</h6>
+										</div>
+									</article>
+									<article class="row article-event">
+										<div class="col l3">20 SEPT 2019</div>
+										<div class="col l9">
+											<h6><b>Título del evento ldfjldsjf</b></h6>
+											<h6>Auditorio de la sedec</h6>
+											<h6>9:00 pm</h6>
+										</div>
+									</article>
+									<article class="row article-event">
+										<div class="col l3">20 SEPT 2019</div>
+										<div class="col l9">
+											<h6><b>Título del evento ldfjldsjf</b></h6>
+											<h6>Auditorio de la sedec</h6>
+											<h6>9:00 pm</h6>
+										</div>
+									</article>
+								</div>
+							</div>
 						</div>
-						<div class="col l4">
-
+						<div class="col l4 hide-on-med-and-down">
 							<div class="container">
 								<div class="row">
 									<div class="col l12">
 										<div class="fb-page"
 											data-href="https://www.facebook.com/Esencia-Tabasco-309657036349926/"
-											data-tabs="timeline" data-width="" data-height="" data-small-header="false"
-											data-adapt-container-width="true" data-hide-cover="false"
-											data-show-facepile="false">
+											data-tabs="timeline" data-height="400"
+											data-small-header="false" data-adapt-container-width="true"
+											data-hide-cover="false" data-show-facepile="false">
 											<blockquote cite="https://www.facebook.com/Esencia-Tabasco-309657036349926/"
 												class="fb-xfbml-parse-ignore"><a
 													href="https://www.facebook.com/Esencia-Tabasco-309657036349926/">Esencia
 													Tabasco</a></blockquote>
 										</div>
-
+										<br>
+										<br>
+										<a class="twitter-timeline" data-height="400" data-width="100%" data-theme="dark"
+											data-link-color="#2B7BB9"
+											href="https://twitter.com/EsenciaTabasco?ref_src=twsrc%5Etfw">Tweets by
+											EsenciaTabasco</a>
+										<script async src="https://platform.twitter.com/widgets.js"
+											charset="utf-8"></script>
+										<script async src="https://platform.twitter.com/widgets.js"
+											charset="utf-8"></script>
 									</div>
 								</div>
-
 							</div>
-
-
 						</div>
 					</div>
 				</div>
-
 			</section>
 		</section>
-
+		<section class="section-container section-container-color" id="contactanos">
+			<div class="container">
+				<div class="row">
+					<h4 class="text-header">CONTÁCTANOS O VISÍTANOS</h4><br>
+					<div class="col l5 s12">
+						<p>Prol. de Paseo Tabasco No.1504</p>
+						<p>Col. Tabasco 2000</p>
+						<p>C.P. 86035 Villahermosa, Tabasco, MX</p>
+						<p>Tel. +52 (993) 3 10 97 50 Ext. 48002</p>
+						<p>Lunes a Viernes de 8:00 a 15:00 hrs</p>
+						<a href=""><img src="{% static 'images/facebook.png' %}" alt=""></a>
+						<a href=""><img src="{% static 'images/instagram.png' %}" alt=""></a>
+						<a href=""><img src="{% static 'images/twitter.png' %}" alt=""></a>
+						<br><br>
+					</div>
+					<div class="col l7 s12">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.548554861725!2d-92.94602038580368!3d17.99972848959458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edd78cf2cbba5f%3A0x271107a6bbaad5dc!2sSecretar%C3%ADa%20para%20el%20Desarrollo%20Econ%C3%B3mico%20y%20la%20Competitividad%20del%20Estado%20de%20Tabasco!5e0!3m2!1ses!2smx!4v1572264882184!5m2!1ses!2smx"
+							width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<a class="scrolltotop z-depth-1"><i class="material-icons">arrow_upward</i></i></a>
 		<footer class="page-footer">
 			<div class="container">
 				<div class="row">
@@ -249,7 +296,7 @@
 				<div class="container">
 					© | Política de privacidad
 					Sitio diseñado por la Secretaría para el Desarrollo Económico y la Competitividad
-					<a class="grey-text text-lighten-4 right" href="#!">Avsio de privacidad</a>
+					<a class="grey-text text-lighten-4 right" href="#!">Aviso de privacidad</a>
 				</div>
 			</div>
 		</footer>
@@ -262,6 +309,40 @@
 		AOS.init();
 		document.addEventListener('DOMContentLoaded', function () {
 			M.AutoInit();
+			const backToTopButton = document.querySelector(".scrolltotop");
+			window.addEventListener("scroll", function () {
+				if (window.pageYOffset > 300) { // Show backToTopButton
+					backToTopButton.style.display = "block";
+				}
+				else { // Hide backToTopButton
+					backToTopButton.style.display = "none";
+				}
+			});
+			backToTopButton.addEventListener("click", smoothScrollBackToTop);
+
+			function smoothScrollBackToTop() {
+				const targetPosition = 0;
+				const startPosition = window.pageYOffset;
+				const distance = targetPosition - startPosition;
+				const duration = 750;
+				let start = null;
+
+				window.requestAnimationFrame(step);
+
+				function step(timestamp) {
+					if (!start) start = timestamp;
+					const progress = timestamp - start;
+					window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+					if (progress < duration) window.requestAnimationFrame(step);
+				}
+			}
+
+			function easeInOutCubic(t, b, c, d) {
+				t /= d / 2;
+				if (t < 1) return c / 2 * t * t * t + b;
+				t -= 2;
+				return c / 2 * (t * t * t + 2) + b;
+			};
 		});
 	</script>
 
