@@ -128,6 +128,10 @@ img{
 }
 
 .advisory-container p{
+    cursor: pointer;
+}
+
+.advisory-container p{
     padding-left: 8%;
     padding-right: 8%;
 }
@@ -191,4 +195,13 @@ footer{
 
 .card-panel .material-icons{
     color: rgb(177, 147, 94);
+}
+
+.overflow-color{
+    background-color: #B18D62;
+}
+
+.overflow-img{
+    position: relative;
+    top: 10px;
 }
