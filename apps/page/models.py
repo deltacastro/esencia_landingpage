@@ -6,7 +6,6 @@ class Eventos(models.Model):
     folio = models.CharField(max_length = 10)
     titulo = models.CharField(max_length = 100)
     fecha = models.DateTimeField()
-    imagen = models.ImageField(upload_to = 'eventos/')
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(null = True)
     deleted_at = models.DateTimeField(null = True)
