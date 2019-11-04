@@ -5,6 +5,34 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style>
+		#preloader {
+			position: fixed;
+			z-index: 9999;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: white;
+		}
+
+		#loader {
+			position: absolute;
+			top: calc(50% - 1.25em);
+			left: calc(50% - 1.25em);
+			animation: beat .40s infinite alternate;
+			transform-origin: center;
+		}
+
+		/* Heart beat animation */
+		@keyframes beat {
+			to {
+				transform: scale(1.4);
+			}
+		}
+	</style>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
 	<link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,6 +41,9 @@
 </head>
 
 <body>
+	<div id="preloader">
+		<img src="{% static 'images/logo-esencia-dorado-min.png' %}" alt="" id="loader" width="40px">
+	</div>
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous"
 		src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v4.0"></script>
@@ -58,8 +89,8 @@
 			<section class="section-container section-container-color">
 				<div class="container">
 					<div class="row">
-						<div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-right" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="400">
+						<div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-right"
+							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="400">
 							<div class="uk-visible-toggle overflow-img" tabindex="-1"
 								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 3000">
 								<ul class="uk-slideshow-items">
@@ -130,8 +161,8 @@
 			<section class="section-container section-container-color">
 				<div class="container">
 					<div class="row">
-						<div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-right" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="400">
+						<div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-right"
+							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="400">
 							<div class="uk-visible-toggle overflow-img" tabindex="-1"
 								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 3000">
 								<ul class="uk-slideshow-items">

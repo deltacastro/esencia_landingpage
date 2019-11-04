@@ -187,10 +187,6 @@ footer{
 
 .article-event{
     padding-bottom: 10px !important;
-    /* border-bottom-width: 1px;
-    border-bottom-color: #e0e0e0;
-    border-bottom-style: solid;
-    color: black; */
 }
 
 .card-panel .material-icons{
@@ -205,3 +201,4 @@ footer{
     position: relative;
     top: 10px;
 }
+
