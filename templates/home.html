@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -34,15 +33,15 @@
 		}
 	</style>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
-	<link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
+	<link rel="stylesheet" href="../static/materialize/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="{% static 'aos/aos.css' %}" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	<link href="../static/aos/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/style.css" />
 </head>
 
 <body>
 	<div id="preloader">
-		<img src="{% static 'images/logo-esencia-dorado-min.png' %}" alt="" id="loader" width="40px">
+		<img src="../static/images/logo-esencia-dorado-min.png" alt="" id="loader" width="40px">
 	</div>
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous"
@@ -52,7 +51,7 @@
 			<nav>
 				<div class="nav-wrapper container">
 					<a href="#!" class="brand-logo"> <img class="responsive-img logo-img"
-							src="{% static 'images/logo-esencia-blanco.png'%}" alt=""></a>
+							src="../static/images/logo-esencia-blanco.png" alt=""></a>
 					<a href="#" data-target="menu-mobile" class="sidenav-trigger">
 						<i class="material-icons">menu</i>
 					</a>
@@ -75,7 +74,7 @@
 	<main>
 		<section id="video-container">
 			<video autoplay loop id="video-background">
-				<source src="{% static 'videos/video-background.mp4' %}" type="video/webm">
+				<source src="../static/videos/video-background.mp4" type="video/webm">
 			</video>
 			<div class="header-overlay"></div>
 			<div class="text-video" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease">
@@ -95,35 +94,35 @@
 								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
 								<ul class="uk-slideshow-items">
 									<li>
-										<img src="{% static 'images/page/4b8255ef-0d15-4888-b7d4-8addeae371c0.jpg' %}"
+										<img src="../static/images/page/4b8255ef-0d15-4888-b7d4-8addeae371c0.jpg"
 											alt="" class="responsive-img z-depth-3" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg'%}"
+										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
 											alt="" class="responsive-img z-depth-3" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/d5a4e9a9-fddd-4798-b076-2edb72d57994.jpg' %}"
+										<img src="../static/images/page/d5a4e9a9-fddd-4798-b076-2edb72d57994.jpg"
 											alt="" class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/EHmsM2bX0AAafni.jpg' %}" alt=""
+										<img src="../static/images/page/EHmsM2bX0AAafni.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/EHVMjLrXkAIHF2W.jpg' %}" alt=""
+										<img src="../static/images/page/EHVMjLrXkAIHF2W.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/f7be5308-b6bb-421c-a0a9-40acf077fe37.jpg' %}"
+										<img src="../static/images/page/f7be5308-b6bb-421c-a0a9-40acf077fe37.jpg"
 											alt="" class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/fd3e454d-945c-48e2-97a9-295a6d31a5fb.jpg' %}"
+										<img src="../static/images/page/fd3e454d-945c-48e2-97a9-295a6d31a5fb.jpg"
 											alt="" class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/EGthB44X4AAP-67.jpg' %}" alt=""
+										<img src="../static/images/page/EGthB44X4AAP-67.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 								</ul>
@@ -157,31 +156,31 @@
 								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
 								<ul class="uk-slideshow-items">
 									<li>
-										<img src="{% static 'images/page/EBfzhC1W4AAq5j2.jpg' %}" alt=""
+										<img src="../static/images/page/EBfzhC1W4AAq5j2.jpg" alt=""
 											class="responsive-img z-depth-3" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/EBfzhC2WwAAwR3L.jpg'%}" alt=""
+										<img src="../static/images/page/EBfzhC2WwAAwR3L.jpg" alt=""
 											class="responsive-img z-depth-3" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/EB34rXXX4AQ9xUO.jpg' %}" alt=""
+										<img src="../static/images/page/EB34rXXX4AQ9xUO.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/EB34rXZXkAcZvX_.jpg' %}" alt=""
+										<img src="../static/images/page/EB34rXZXkAcZvX_.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/EBfNDn1XoAArnhJ.jpg' %}" alt=""
+										<img src="../static/images/page/EBfNDn1XoAArnhJ.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/EBfD33DXYAAnCQ5.jpg' %}" alt=""
+										<img src="../static/images/page/EBfD33DXYAAnCQ5.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/62452005_1070932083103417_147917342234378240_n.jpg' %}"
+										<img src="../static/images/page/62452005_1070932083103417_147917342234378240_n.jpg"
 											alt="" class="responsive-img" uk-cover>
 									</li>
 								</ul>
@@ -203,23 +202,23 @@
 								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
 								<ul class="uk-slideshow-items">
 									<li>
-										<img src="{% static 'images/page/66008543_2751353871558564_6848119813517082624_n.jpg' %}"
+										<img src="../static/images/page/66008543_2751353871558564_6848119813517082624_n.jpg"
 											alt="" class="responsive-img z-depth-3" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/FB_IMG_1571159285403.jpg'%}" alt=""
+										<img src="../static/images/page/FB_IMG_1571159285403.jpg" alt=""
 											class="responsive-img z-depth-3" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/69965541_123093702372449_8305152237068353536_n.jpg' %}"
+										<img src="../static/images/page/69965541_123093702372449_8305152237068353536_n.jpg"
 											alt="" class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/FB_IMG_1571159617616.jpg' %}" alt=""
+										<img src="../static/images/page/FB_IMG_1571159617616.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="{% static 'images/page/FB_IMG_15711568934977434.jpg' %}" alt=""
+										<img src="../static/images/page/FB_IMG_15711568934977434.jpg" alt=""
 											class="responsive-img" uk-cover>
 									</li>
 								</ul>
@@ -251,7 +250,7 @@
 						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="300">
 							<div class="row">
-								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
+								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
 							</div>
 							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
 							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
@@ -262,7 +261,7 @@
 						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="300">
 							<div class="row">
-								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
+								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
 							</div>
 							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
 							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
@@ -274,7 +273,7 @@
 						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="300">
 							<div class="row">
-								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
+								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
 							</div>
 							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
 							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
@@ -286,7 +285,7 @@
 						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="300">
 							<div class="row">
-								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
+								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
 							</div>
 							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
 							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
@@ -311,7 +310,7 @@
 							<div class="row">
 								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline  z-depth-2">
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg' %}"
+										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
 											alt="" class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
 											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
@@ -320,7 +319,7 @@
 								</article>
 								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg' %}"
+										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
 											alt="" class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
 											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
@@ -329,7 +328,7 @@
 								</article>
 								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg' %}"
+										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
 											alt="" class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
 											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
@@ -338,7 +337,7 @@
 								</article>
 								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg' %}"
+										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
 											alt="" class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
 											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
@@ -425,11 +424,11 @@
 						<p>Tel. +52 (993) 3 10 97 50 Ext. 48002</p>
 						<p>Lunes a Viernes de 8:00 a 15:00 hrs</p>
 						<a href="https://www.facebook.com/Esencia-Tabasco-309657036349926/" target="_blank"><img
-								src="{% static 'images/facebook.png' %}" alt="" width="30px"></a>
+								src="../static/images/facebook.png" alt="" width="30px"></a>
 						<a href="https://www.instagram.com/esenciatabasco/" target="_blank"><img
-								src="{% static 'images/instagram.png' %}" alt="" width="30px"></a>
+								src="../static/images/instagram.png" alt="" width="30px"></a>
 						<a href="https://twitter.com/EsenciaTabasco" target="_blank"><img
-								src="{% static 'images/twitter.png' %}" alt="" width="30px"></a>
+								src="../static/images/twitter.png" alt="" width="30px"></a>
 						<br><br>
 					</div>
 					<div class="col l7 s12">
@@ -445,7 +444,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">
-						<img src="static/images/SEDEC_logo-04.png" width="190" height="150" alt="">
+						<img src="../static/images/SEDEC_logo-04.png" width="190" height="150" alt="">
 					</div>
 					<div class="col l4 offset-l2 s12">
 						<!-- <h5 class="white-text">Links</h5>
@@ -467,11 +466,11 @@
 			</div>
 		</footer>
 	</main>
-	<script src="{% static 'aos/aos.js' %}"></script>
+	<script src="../static/js/app.js"></script>
+	<script src="../static/aos/aos.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
-	<script src="{% static 'materialize/js/materialize.min.js' %}"></script>
-	<script src="{% static 'js/app.js' %}"></script>
+	<script src="../static/materialize/js/materialize.min.js"></script>
 </body>
 
 </html>
