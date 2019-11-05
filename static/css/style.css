@@ -149,7 +149,7 @@ img{
 }
 
 .uk-overlay-primary {
-    background: rgba( 0, 0, 0 , .4) !important;
+    background: rgba(39, 16, 0, 0.7) !important;
 }
 
 .uk-overlay {
@@ -202,3 +202,7 @@ footer{
     top: 10px;
 }
 
+a{
+    color: white !important;
+    text-decoration: none !important;
+}
