@@ -73,8 +73,9 @@
 	</header>
 	<main>
 		<section id="video-container">
-			<video autoplay loop id="video-background">
-				<source src="../static/videos/video-background.mp4" type="video/webm">
+			<video autoplay loop muted id="video-background">
+				<source src="../static/videos/video-background.mp4" type="video/mp4">
+				Tu navegador no admite el elemento <code>video</code>.
 			</video>
 			<div class="header-overlay"></div>
 			<div class="text-video" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease">
@@ -82,6 +83,12 @@
 					fortalecer
 					el posicionamiento y lanzamiento de tu empresa </p>
 				<a class="btn-large btn-dorado" href="#">Regístrate</a>
+			</div>
+		</section>
+		<section class="section-container special-section">
+			<div class="container center-align">
+				<h4 class="white-text">Recuerda que consumir local ayuda a los emprendedores a prosperar y generar más
+					empleos.</h4>
 			</div>
 		</section>
 		<section id="parent-section">
@@ -94,16 +101,16 @@
 								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
 								<ul class="uk-slideshow-items">
 									<li>
-										<img src="../static/images/page/4b8255ef-0d15-4888-b7d4-8addeae371c0.jpg"
-											alt="" class="responsive-img z-depth-3" uk-cover>
+										<img src="../static/images/page/4b8255ef-0d15-4888-b7d4-8addeae371c0.jpg" alt=""
+											class="responsive-img z-depth-3" uk-cover>
 									</li>
 									<li>
-										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
-											alt="" class="responsive-img z-depth-3" uk-cover>
+										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg" alt=""
+											class="responsive-img z-depth-3" uk-cover>
 									</li>
 									<li>
-										<img src="../static/images/page/d5a4e9a9-fddd-4798-b076-2edb72d57994.jpg"
-											alt="" class="responsive-img" uk-cover>
+										<img src="../static/images/page/d5a4e9a9-fddd-4798-b076-2edb72d57994.jpg" alt=""
+											class="responsive-img" uk-cover>
 									</li>
 									<li>
 										<img src="../static/images/page/EHmsM2bX0AAafni.jpg" alt=""
@@ -114,12 +121,12 @@
 											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="../static/images/page/f7be5308-b6bb-421c-a0a9-40acf077fe37.jpg"
-											alt="" class="responsive-img" uk-cover>
+										<img src="../static/images/page/f7be5308-b6bb-421c-a0a9-40acf077fe37.jpg" alt=""
+											class="responsive-img" uk-cover>
 									</li>
 									<li>
-										<img src="../static/images/page/fd3e454d-945c-48e2-97a9-295a6d31a5fb.jpg"
-											alt="" class="responsive-img" uk-cover>
+										<img src="../static/images/page/fd3e454d-945c-48e2-97a9-295a6d31a5fb.jpg" alt=""
+											class="responsive-img" uk-cover>
 									</li>
 									<li>
 										<img src="../static/images/page/EGthB44X4AAP-67.jpg" alt=""
@@ -252,21 +259,33 @@
 							<div class="row">
 								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
 							</div>
-							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
-								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
-								nihil non atque nostrum optio.</p>
-							<div uk-dropdown="mode: click">loremememem1.</div>
+							<h6 class="text-header"><b>ASESORÍA EN DISEÑO GRÁFICO</b></h6>
+							<p>Te asesoramos para que tu producto sea de la mejor calidad posible. Es por eso que te
+								ofrecemos asesoría gratuita. <br> Te esperamos martes y jueves de 10:00 am a 2:00 pm.
+							</p>
+							<div uk-dropdown="mode: click; pos: top-center">loremememem1.</div>
 						</div>
 						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
 							data-aos-easing="ease" data-aos-delay="300">
 							<div class="row">
 								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
 							</div>
-							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
-								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
-								nihil non atque nostrum optio.</p>
+							<h6 class="text-header"><b>ASESORÍA Y REGISTRO DE MARCAS</b></h6>
+							<p>¿Quieres registrar tu marca?. Te apoyamos en el proceso de registro de marca ante el IMPI
+								Instituto Mexicano de la Propiedad Industrial. <br> Te esperamos de Lunes a Miércoles de
+								10:00 am a 2:00 pm.</p>
+							<div uk-dropdown="mode: click; pos: top-center">Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit, sed do eiusmod tempor incididunt.</div>
+						</div>
+						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
+							data-aos-easing="ease" data-aos-delay="300">
+							<div class="row">
+								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
+							</div>
+							<h6 class="text-header"><b>ASESORÍA Y TRÁMITES PARA CÓDIGO DE BARRAS</b></h6>
+							<p>¿Aún no tienes código de barras en tu producto?. <br> Recuerda que al tenerlo otorga
+								credibilidad, profesionalismo y seguridad a tu producto. <br> Te esperamos de Lunes a
+								Jueves de 11:00 am a 2:00 pm.</p>
 							<div uk-dropdown="mode: click; pos: top-center">Lorem ipsum dolor sit amet, consectetur
 								adipiscing elit, sed do eiusmod tempor incididunt.</div>
 						</div>
@@ -276,21 +295,7 @@
 								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
 							</div>
 							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
-								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
-								nihil non atque nostrum optio.</p>
-							<div uk-dropdown="mode: click; pos: top-center">Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor incididunt.</div>
-						</div>
-						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="300">
-							<div class="row">
-								<img src="../static/images/handshake.svg" alt="" class="svg-advisory">
-							</div>
-							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
-								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
-								nihil non atque nostrum optio.</p>
+							<p>¿Quieres que tu marca sea parte de <strong>EsenciaTabasco</strong> ?. <br>Te brindamos asesoría y a la vez apoyamos en el proceso de registro <br>Te esperamos de lunes a viernes de 9 am a 3 pm</p>
 							<div uk-dropdown="mode: click; pos: top-center">Lorem ipsum dolor sit amet, consectetur
 								adipiscing elit, sed do eiusmod tempor incididunt.</div>
 						</div>
@@ -310,37 +315,41 @@
 							<div class="row">
 								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline  z-depth-2">
-										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
-											alt="" class="responsive-img">
+										<img src="../static/images/page/EIn9LboXUAMX2Uv.jpg" alt=""
+											class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
-											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
+											<h6 class="">‪‪Despliegue de Vasanta. Conectará de telefonía móvil e
+												internet a Tabasco.</h6>
 										</div>
 									</div>
 								</article>
 								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
-										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
-											alt="" class="responsive-img">
+										<img src="../static/images/page/EIkh9nDX0AEuh-1.jpg" alt=""
+											class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
-											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
+											<h6 class="">Se llevó a cabo la plática "Nociones Básicas para Emprender".
+											</h6>
 										</div>
 									</div>
 								</article>
 								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
-										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
-											alt="" class="responsive-img">
+										<img src="../static/images/page/EIYulaOXUAItdt7.jpg" alt=""
+											class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
-											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
+											<h6 class="">Dedicamos nuestro altar de día de muertos a los empresarios que
+												han dejado un legado en nuestra región.</h6>
 										</div>
 									</div>
 								</article>
 								<article class="article-notice col l6 m6 s12">
 									<div class="uk-inline z-depth-2">
-										<img src="../static/images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg"
-											alt="" class="responsive-img">
+										<img src="../static/images/page/EBfzhC2WwAAwR3L.jpg" alt=""
+											class="responsive-img">
 										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
-											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
+											<h6 class="">Se entregó equipamiento para empresas del sector agroindustrial
+												beneficiando a 40 empresas y emprendedores tabasqueños.</h6>
 										</div>
 									</div>
 								</article>
@@ -382,29 +391,11 @@
 							<div class="row">
 								<div class="col l3 s12 m6">
 									<div class="card-panel">
-										<h6><b>Cumpleaños</b></h6>
+										<h6><b>Charla informativa sobre código de barras</b></h6>
 										<div class="divider"></div>
-										<p><i class="tiny material-icons">event</i>&nbsp;15 de Enero de 2019</p>
-										<p><i class="tiny material-icons">schedule</i>&nbsp;10:00</p>
-										<p><i class="tiny material-icons">place</i>&nbsp;Villahermosa, Tabasco</p>
-									</div>
-								</div>
-								<div class="col l3 s12 m6">
-									<div class="card-panel">
-										<h6><b>Cumpleaños</b></h6>
-										<div class="divider"></div>
-										<p><i class="tiny material-icons">event</i>&nbsp;15 de Enero de 2019</p>
-										<p><i class="tiny material-icons">schedule</i>&nbsp;10:00</p>
-										<p><i class="tiny material-icons">place</i>&nbsp;Villahermosa, Tabasco</p>
-									</div>
-								</div>
-								<div class="col l3 s12 m6">
-									<div class="card-panel">
-										<h6><b>Cumpleaños</b></h6>
-										<div class="divider"></div>
-										<p><i class="tiny material-icons">event</i>&nbsp;15 de Enero de 2019</p>
-										<p><i class="tiny material-icons">schedule</i>&nbsp;10:00</p>
-										<p><i class="tiny material-icons">place</i>&nbsp;Villahermosa, Tabasco</p>
+										<p><i class="tiny material-icons">event</i>&nbsp;7 de noviembre de 2019</p>
+										<p><i class="tiny material-icons">schedule</i>&nbsp;11:00 am</p>
+										<p><i class="tiny material-icons">place</i>&nbsp;Auditorio SEDEC</p>
 									</div>
 								</div>
 							</div>

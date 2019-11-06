@@ -28,7 +28,7 @@ img{
 #video-container > #video-background{
     width: 100%;
     height: 100vh;
-    object-fit: fill;
+    object-fit: cover;
     position: fixed;
     z-index: -1;
 }
@@ -197,6 +197,10 @@ footer{
     background-color: #B18D62;
 }
 
+.special-section{
+    background-color: rgba(177, 147, 94, 0.98);
+}
+/* poner color a la parte de avisos cafe con opacidd */
 .overflow-img{
     position: relative;
     top: 10px;
