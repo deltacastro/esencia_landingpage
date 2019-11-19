@@ -1,0 +1,77 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load customtags %}
+{% block title %}Esencia Landing Page | Secciones{% endblock %}
+{% block maincontent %}
+<section id="preview-page">
+    {% secciones 'admin' %}
+</section>
+<div id="modal-section" uk-modal>
+    <div class="uk-modal-dialog">
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title title-color">Nueva sección</h2>
+        </div>
+        <div class="uk-modal-body">
+            <form id="form-section" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-field">
+                    {{fseccion.titulo}}
+                    {{fseccion.titulo.label_tag}}
+                </div>
+                <div class="input-field">
+                    {{fseccion.subtitulo}}
+                    {{fseccion.subtitulo.label_tag}}
+                </div>
+                <div class="file-field input-field">
+                    <div class="btn btn-color">
+                        <span>Media</span>
+                        {{fmultimedia.media}}
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path" type="text">
+                    </div>
+                </div>
+                <button type="submit" id="save-section" class="hide"></button>
+            </form>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+            <button class="btn btn-color btn-trigger" data-target="#save-section">Guardar</button>
+        </div>
+    </div>
+</div>
+<div class="fixed-action-btn">
+    <a href="#modal-section" class="btn-floating btn-large btn-color" uk-toggle><i class="material-icons">add</i></a>
+</div>
+{% endblock %}
+{% block extrafunctions %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init()
+        document.querySelector('.btn-trigger').addEventListener('click', function () {
+            document.querySelector(this.dataset.target).click()
+        })
+        document.querySelectorAll('.delete-section').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de eliminar esta sección?</h6>', { labels: { ok: 'Sí, eliminar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+        document.querySelectorAll('.publish-section').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de publicar esta sección?</h6>', { labels: { ok: 'Sí, publicar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+        document.querySelectorAll('.hide-section').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de ocultar esta sección?</h6>', { labels: { ok: 'Sí, ocultar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+    })
+</script>
+{% endblock %}

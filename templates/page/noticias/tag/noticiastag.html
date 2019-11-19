@@ -1,0 +1,27 @@
+{% load static %}
+{% for noticia in noticias %}
+<article class="article-notice col l6 m6 s12">
+    {% if not_for == 'admin' %}
+    <div class="row">
+        <div class="col l12">
+            <a href="{% url 'page:edNoticia' noticia.folio %}" class="btn-small blue"><i
+                    class="material-icons">edit</i></a>
+            <button data-url="{% url 'page:eNoticia' noticia.folio %}" class="btn-small red delete-news"><i
+                    class="material-icons">close</i></button>
+            {% if not noticia.is_published %}
+            <button data-url="{% url 'page:pNoticia' noticia.folio %}"
+                class="btn-small blue publish-news">Publicar</button>
+            {% else %}
+            <button data-url="{% url 'page:oNoticia' noticia.folio %}" class="btn-small blue hide-news">Ocultar</button>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    <div class="uk-inline z-depth-2">
+        <img src="{% get_media_prefix %}{{noticia.media.first.media}}" alt="" class="responsive-img">
+        <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+            <h6 class="">‪‪{{noticia.titulo}}</h6>
+        </div>
+    </div>
+</article>
+{% endfor %}

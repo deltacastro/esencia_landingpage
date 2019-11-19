@@ -28,7 +28,7 @@ img{
 #video-container > #video-background{
     width: 100%;
     height: 100vh;
-    object-fit: fill;
+    object-fit: cover;
     position: fixed;
     z-index: -1;
 }
@@ -76,6 +76,14 @@ img{
         z-index: -1;
     }
 }
+
+@media screen and (min-width: 601px) and (max-width: 850px)  {
+	#video-container > .text-video{
+		font-size: 5vw;
+        text-align: center;
+    }
+}
+
 
 #video-container > .header-overlay {
 	height: 100vh;
@@ -149,7 +157,7 @@ img{
 }
 
 .uk-overlay-primary {
-    background: rgba( 0, 0, 0 , .4) !important;
+    background: rgba(39, 16, 0, 0.7) !important;
 }
 
 .uk-overlay {
@@ -197,8 +205,23 @@ footer{
     background-color: #B18D62;
 }
 
+.special-section{
+    background-color: rgba(177, 147, 94, 0.98);
+}
+/* poner color a la parte de avisos cafe con opacidd */
 .overflow-img{
     position: relative;
     top: 10px;
 }
 
+a{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.flex {
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }

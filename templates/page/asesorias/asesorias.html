@@ -1,0 +1,83 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load customtags %}
+{% block title %}Esencia Landing Page | Asesorías y Trámites{% endblock %}
+{% block maincontent %}
+<section id="preview-page">
+    <section class="section-container">
+        {% asesorias 'admin' %}
+    </section>
+</section>
+<div id="modal-advisory" uk-modal>
+    <div class="uk-modal-dialog">
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title title-color">Nueva asesoría o trámite</h2>
+        </div>
+        <div class="uk-modal-body">
+            <form id="form-section" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-field">
+                    {{fasesoria.titulo}}
+                    {{fasesoria.titulo.label_tag}}
+                </div>
+                <div class="input-field">
+                    {{fasesoria.contenido}}
+                    {{fasesoria.contenido.label_tag}}
+                </div>
+                <div class="input-field">
+                    {{fasesoria.extra}}
+                    {{fasesoria.extra.label_tag}}
+                </div>
+                <div class="file-field input-field">
+                    <div class="btn btn-color">
+                        <span>Media</span>
+                        {{fmultimedia.media}}
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path" type="text">
+                    </div>
+                </div>
+                <button type="submit" id="save-advisory" class="hide"></button>
+            </form>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+            <button class="btn btn-color btn-trigger" data-target="#save-advisory">Guardar</button>
+        </div>
+    </div>
+</div>
+<div class="fixed-action-btn">
+    <a href="#modal-advisory" class="btn-floating btn-large btn-color" uk-toggle><i class="material-icons">add</i></a>
+</div>
+{% endblock %}
+{% block extrafunctions %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init()
+        document.querySelector('.btn-trigger').addEventListener('click', function () {
+            document.querySelector(this.dataset.target).click()
+        })
+        document.querySelectorAll('.delete-advisory').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de eliminar esta asesoría o trámite?</h6>', { labels: { ok: 'Sí, eliminar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+        document.querySelectorAll('.publish-advisory').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de publicar esta asesoría o trámite?</h6>', { labels: { ok: 'Sí, publicar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+        document.querySelectorAll('.hide-advisory').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de ocultar esta asesoría o trámite?</h6>', { labels: { ok: 'Sí, ocultar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+    })
+</script>
+{% endblock %}

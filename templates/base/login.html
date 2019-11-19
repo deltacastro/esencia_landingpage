@@ -65,19 +65,19 @@
             <div id="login">
                 <div class="row">
                     <div class="center-align">
-                        <img class="responsive-img logo-rotation" src="{% static 'images/logo-esencia-dorado.png' %}" width="50%"
-                            alt="">
+                        <img class="responsive-img logo-rotation" src="{% static 'images/logo-esencia-dorado.png' %}"
+                            width="50%" alt="">
                     </div>
                 </div>
                 <form action="" method="post" id="formLogin">
                     {% csrf_token %}
                     <div class="input-field">
-                        <input type="text" name="username" id="username">
-                        <label for="username">Usuario</label>
+                        {{flogin.username}}
+                        {{flogin.username.label_tag}}
                     </div>
                     <div class="input-field">
-                        <input type="password" name="password" id="password">
-                        <label for="password">Contraseña</label>
+                        {{flogin.password}}
+                        {{flogin.password.label_tag}}
                     </div>
                     <div class="row center-align">
                         <button class="btn" id="accessLogin">Acceder</button>
