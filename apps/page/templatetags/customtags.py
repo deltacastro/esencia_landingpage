@@ -32,13 +32,10 @@ def noticias(not_for):
 @register.inclusion_tag('page/eventos/tag/eventostag.html')
 def eventos(eve_for):
     date_time = timezone.localtime()
-    print(date_time.strftime("%H:%M:%S"))
-    print('12:10:00' >= date_time.strftime("%H:%M:%S"))
     if eve_for == 'public':
         eventos = Eventos.objects.filter(is_published = True, fecha__gte = date_time.date(), hora__gte = date_time.strftime("%H:%M:%S"))
     if eve_for == 'admin':
         eventos = Eventos.objects.filter(is_disabled = False, fecha__gte = date_time.date(), hora__gte = date_time.strftime("%H:%M:%S"))
-    print(eventos)
     return {'eventos' : eventos, 'eve_for': eve_for}
 
 @register.filter
