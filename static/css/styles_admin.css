@@ -110,3 +110,20 @@ a{
 .article-notice{
     margin-bottom: 20px;
 }
+
+.article-notice img{
+    width: 100% !important;
+    height: 250px;
+}
+
+@media (max-width: 600px){
+    .article-notice img{
+        width: 100% !important;
+        height: auto;
+    }
+    
+}
+
+.card-panel .material-icons{
+    color: rgb(177, 147, 94);
+}

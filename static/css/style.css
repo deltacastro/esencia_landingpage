@@ -225,3 +225,8 @@ a{
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+
+  .article-notice img{
+    width: 100% !important;
+    height: 250px;
+}

@@ -1,6 +1,7 @@
 # Django
 from django import template
 from django.utils import timezone
+from itertools import chain
 # App page
 from ..models import Secciones, Asesorias_Tramites, Noticias, Eventos
 register = template.Library()
@@ -33,9 +34,13 @@ def noticias(not_for):
 def eventos(eve_for):
     date_time = timezone.localtime()
     if eve_for == 'public':
-        eventos = Eventos.objects.filter(is_published = True, fecha__gte = date_time.date(), hora__gte = date_time.strftime("%H:%M:%S"))
+        eventos_hoy = Eventos.objects.filter(is_published = True, fecha = date_time.date(), hora__gte = date_time.strftime("%H:%M:%S"))
+        eventos_futuro = Eventos.objects.filter(is_published = True, fecha__gt = date_time.date())
+        eventos = list(chain(eventos_hoy, eventos_futuro))
     if eve_for == 'admin':
-        eventos = Eventos.objects.filter(is_disabled = False, fecha__gte = date_time.date(), hora__gte = date_time.strftime("%H:%M:%S"))
+        eventos_hoy = Eventos.objects.filter(is_disabled = False, fecha = date_time.date(), hora__gte = date_time.strftime("%H:%M:%S"))
+        eventos_futuro = Eventos.objects.filter(is_disabled = False, fecha__gt = date_time.date())
+        eventos = list(chain(eventos_hoy, eventos_futuro))
     return {'eventos' : eventos, 'eve_for': eve_for}
 
 @register.filter

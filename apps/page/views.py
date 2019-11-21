@@ -8,10 +8,23 @@ from django.contrib.auth.models import User
 from .forms import (
     fLogin, fSecciones, fMultimedias, fEventos, fMultimediasOpcional, fAsesorias_Tramites, fMultimediasSimple, fMultimediasSimpleOpcional, fNoticias
 )
-from .models import Secciones, Multimedias, Asesorias_Tramites, Noticias, Eventos
+from .models import Secciones, Multimedias, Asesorias_Tramites, Noticias, Eventos, Loginfo
 
 folio_prefixes = {'seccion': 'sec-', 'asesoria': 'ase-', 'noticia': 'not-', 'evento': 'eve-'}
 action_messages = {'error': 'Ha ocurrido un error. Inténtelo de nuevo por favor'}
+action_messages_log = {
+    'create': 'ha creado',
+    'delete': 'ha eliminado',
+    'update': 'ha actualizado',
+    'publish': 'ha publicado',
+    'hide': 'ha ocultado'
+}
+verbose_object = {
+    'seccion': 'una sección',
+    'asesoria': 'una asesoría o trámite',
+    'noticia': 'una noticia',
+    'evento': 'un evento'
+}
 
 def main(request):
     return render(request, 'home.html')
@@ -64,6 +77,10 @@ def vSecciones(request):
                 multimedia.save()
                 seccion.media.add(multimedia)
             messages.success(request, 'Sección agregada con éxito')
+            # log
+            add_log(usuario, 'create', seccion.folio, 'seccion', 
+                '{} {} {}'.format(usuario.get_full_name(), action_messages_log['create'], verbose_object['seccion'])
+            )
         else:   
             print(fseccion.errors)
             print(fmultimedia.errors)
@@ -78,9 +95,14 @@ def vSecciones(request):
 @login_required
 def vSeccionesEliminar(request, folio):
     if Secciones.objects.filter(folio = folio).exists():
+        usuario = request.user
         seccion = Secciones.objects.get(folio = folio)
         seccion.eliminar()
         messages.success(request, 'Sección eliminada con éxito')
+        # log
+        add_log(usuario, 'delete', seccion.folio, 'seccion', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['delete'], verbose_object['seccion'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:secciones')
@@ -88,9 +110,14 @@ def vSeccionesEliminar(request, folio):
 @login_required
 def vSeccionesPublicar(request, folio):
     if Secciones.objects.filter(folio = folio).exists():
+        usuario = request.user
         seccion = Secciones.objects.get(folio = folio)
         seccion.publicar()
         messages.success(request, 'Sección publicada con éxito')
+        # log
+        add_log(usuario, 'publish', seccion.folio, 'seccion', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['publish'], verbose_object['seccion'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:secciones')
@@ -98,9 +125,14 @@ def vSeccionesPublicar(request, folio):
 @login_required
 def vSeccionesOcultar(request, folio):
     if Secciones.objects.filter(folio = folio).exists():
+        usuario = request.user
         seccion = Secciones.objects.get(folio = folio)
         seccion.ocultar()
         messages.success(request, 'Sección ocultada con éxito')
+        # log
+        add_log(usuario, 'hide', seccion.folio, 'seccion', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['hide'], verbose_object['seccion'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:secciones')
@@ -108,6 +140,7 @@ def vSeccionesOcultar(request, folio):
 @login_required
 def vSeccionesEditar(request, folio):
     if Secciones.objects.filter(folio = folio).exists():
+        usuario = request.user
         seccion = Secciones.objects.get(folio = folio)
         if request.method == 'POST':
             fseccion = fSecciones(request.POST, instance = seccion)
@@ -127,6 +160,10 @@ def vSeccionesEditar(request, folio):
                     messages.error(request, action_messages['error'])
                     return redirect('page:edSeccion', folio = seccion.folio)
                 messages.success(request, 'Sección editada con éxito')
+                # log
+                add_log(usuario, 'update', seccion.folio, 'seccion', 
+                    '{} {} {}'.format(usuario.get_full_name(), action_messages_log['update'], verbose_object['seccion'])
+                )
             return redirect('page:secciones')
         else:
             fseccion = fSecciones(instance = seccion)
@@ -167,6 +204,10 @@ def vAsesorias(request):
             asesoria.save()
             asesoria.media.add(fmultimedia.save())
             messages.success(request, 'Asesoría o trámite agregada con éxito')
+            # log
+            add_log(usuario, 'create', asesoria.folio, 'asesoria', 
+                '{} {} {}'.format(usuario.get_full_name(), action_messages_log['create'], verbose_object['asesoria'])
+            )
         else:   
             print(fasesoria.errors)
             print(fmultimedia.errors)
@@ -181,9 +222,14 @@ def vAsesorias(request):
 @login_required
 def vAsesoriasEliminar(request, folio):
     if Asesorias_Tramites.objects.filter(folio = folio).exists():
+        usuario = request.user
         asesoria = Asesorias_Tramites.objects.get(folio = folio)
         asesoria.eliminar()
         messages.success(request, 'Asesoria eliminada con éxito')
+        # log
+        add_log(usuario, 'delete', asesoria.folio, 'asesoria', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['delete'], verbose_object['asesoria'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:asesorias')
@@ -191,9 +237,14 @@ def vAsesoriasEliminar(request, folio):
 @login_required
 def vAsesoriasPublicar(request, folio):
     if Asesorias_Tramites.objects.filter(folio = folio).exists():
+        usuario = request.user
         asesoria = Asesorias_Tramites.objects.get(folio = folio)
         asesoria.publicar()
         messages.success(request, 'Asesoría publicada con éxito')
+        # log
+        add_log(usuario, 'publish', asesoria.folio, 'asesoria', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['publish'], verbose_object['asesoria'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:asesorias')
@@ -201,9 +252,14 @@ def vAsesoriasPublicar(request, folio):
 @login_required
 def vAsesoriasOcultar(request, folio):
     if Asesorias_Tramites.objects.filter(folio = folio).exists():
+        usuario = request.user
         asesoria = Asesorias_Tramites.objects.get(folio = folio)
         asesoria.ocultar()
         messages.success(request, 'Asesoría ocultada con éxito')
+        # log
+        add_log(usuario, 'hide', asesoria.folio, 'asesoria', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['hide'], verbose_object['asesoria'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:asesorias')
@@ -211,6 +267,7 @@ def vAsesoriasOcultar(request, folio):
 @login_required
 def vAsesoriasEditar(request, folio):
     if Asesorias_Tramites.objects.filter(folio = folio).exists():
+        usuario = request.user
         asesoria = Asesorias_Tramites.objects.get(folio = folio)
         if request.method == 'POST':
             fasesoria = fAsesorias_Tramites(request.POST, instance = asesoria)
@@ -228,6 +285,10 @@ def vAsesoriasEditar(request, folio):
                     messages.error(request, action_messages['error'])
                     return redirect('page:edAsesoria', folio = asesoria.folio)
                 messages.success(request, 'Asesoría editada con éxito')
+                # log
+                add_log(usuario, 'update', asesoria.folio, 'asesoria', 
+                    '{} {} {}'.format(usuario.get_full_name(), action_messages_log['update'], verbose_object['asesoria'])
+                )
             return redirect('page:asesorias')
         else:
             fasesoria = fAsesorias_Tramites(instance = asesoria)
@@ -257,6 +318,10 @@ def vNoticias(request):
                 multimedia.save()
                 noticia.media.add(multimedia)
             messages.success(request, 'Noticia agregada con éxito')
+            # log
+            add_log(usuario, 'create', noticia.folio, 'noticia', 
+                '{} {} {}'.format(usuario.get_full_name(), action_messages_log['create'], verbose_object['noticia'])
+            )
         else:   
             print(fnoticia.errors)
             print(fmultimedia.errors)
@@ -271,9 +336,14 @@ def vNoticias(request):
 @login_required
 def vNoticiasEliminar(request, folio):
     if Noticias.objects.filter(folio = folio).exists():
+        usuario = request.user
         noticia = Noticias.objects.get(folio = folio)
         noticia.eliminar()
         messages.success(request, 'Noticia eliminada con éxito')
+        # log
+        add_log(usuario, 'delete', noticia.folio, 'noticia', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['delete'], verbose_object['noticia'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:noticias')
@@ -281,9 +351,14 @@ def vNoticiasEliminar(request, folio):
 @login_required
 def vNoticiasPublicar(request, folio):
     if Noticias.objects.filter(folio = folio).exists():
+        usuario = request.user
         noticia = Noticias.objects.get(folio = folio)
         noticia.publicar()
         messages.success(request, 'Noticia publicada con éxito')
+        # log
+        add_log(usuario, 'publish', noticia.folio, 'noticia', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['publish'], verbose_object['noticia'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:noticias')
@@ -291,9 +366,14 @@ def vNoticiasPublicar(request, folio):
 @login_required
 def vNoticiasOcultar(request, folio):
     if Noticias.objects.filter(folio = folio).exists():
+        usuario = request.user
         noticia = Noticias.objects.get(folio = folio)
         noticia.ocultar()
         messages.success(request, 'Noticia ocultada con éxito')
+        # log
+        add_log(usuario, 'hide', noticia.folio, 'noticia', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['hide'], verbose_object['noticia'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:noticias')
@@ -301,6 +381,7 @@ def vNoticiasOcultar(request, folio):
 @login_required
 def vNoticiasEditar(request, folio):
     if Noticias.objects.filter(folio = folio).exists():
+        usuario = request.user
         noticia = Noticias.objects.get(folio = folio)
         if request.method == 'POST':
             fnoticia = fNoticias(request.POST, instance = noticia)
@@ -320,6 +401,10 @@ def vNoticiasEditar(request, folio):
                     messages.error(request, action_messages['error'])
                     return redirect('page:edNoticia', folio = noticia.folio)
                 messages.success(request, 'Noticia editada con éxito')
+                # log
+                add_log(usuario, 'update', noticia.folio, 'noticia', 
+                    '{} {} {}'.format(usuario.get_full_name(), action_messages_log['update'], verbose_object['noticia'])
+                )  
             return redirect('page:noticias')
         else:
             fnoticia = fNoticias(instance = noticia)
@@ -349,6 +434,10 @@ def vEventos(request):
                 multimedia.save()
                 evento.media.add(multimedia)
             messages.success(request, 'Evento agregado con éxito')
+            # log
+            add_log(usuario, 'create', evento.folio, 'evento', 
+                '{} {} {}'.format(usuario.get_full_name(), action_messages_log['create'], verbose_object['evento'])
+            )
         else:   
             print(fevento.errors)
             print(fmultimedia.errors)
@@ -363,9 +452,14 @@ def vEventos(request):
 @login_required
 def vEventosEliminar(request, folio):
     if Eventos.objects.filter(folio = folio).exists():
+        usuario = request.user
         evento = Eventos.objects.get(folio = folio)
         evento.eliminar()
         messages.success(request, 'Evento eliminado con éxito')
+        # log
+        add_log(usuario, 'delete', evento.folio, 'evento', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['delete'], verbose_object['evento'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:eventos')
@@ -373,9 +467,14 @@ def vEventosEliminar(request, folio):
 @login_required
 def vEventosPublicar(request, folio):
     if Eventos.objects.filter(folio = folio).exists():
+        usuario = request.user
         evento = Eventos.objects.get(folio = folio)
         evento.publicar()
         messages.success(request, 'Evento publicado con éxito')
+        # log
+        add_log(usuario, 'publish', evento.folio, 'evento', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['publish'], verbose_object['evento'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:eventos')
@@ -383,9 +482,14 @@ def vEventosPublicar(request, folio):
 @login_required
 def vEventosOcultar(request, folio):
     if Eventos.objects.filter(folio = folio).exists():
+        usuario = request.user
         evento = Eventos.objects.get(folio = folio)
         evento.ocultar()
         messages.success(request, 'Evento ocultado con éxito')
+        # log
+        add_log(usuario, 'hide', evento.folio, 'evento', 
+            '{} {} {}'.format(usuario.get_full_name(), action_messages_log['hide'], verbose_object['evento'])
+        )
     else:
         messages.error(request, action_messages['error'])
     return redirect('page:eventos')
@@ -393,6 +497,7 @@ def vEventosOcultar(request, folio):
 @login_required
 def vEventosEditar(request, folio):
     if Eventos.objects.filter(folio = folio).exists():
+        usuario = request.user
         evento = Eventos.objects.get(folio = folio)
         if request.method == 'POST':
             fevento = fEventos(request.POST, instance = evento)
@@ -412,6 +517,10 @@ def vEventosEditar(request, folio):
                     messages.error(request, action_messages['error'])
                     return redirect('page:edEvento', folio = evento.folio)
                 messages.success(request, 'Evento editado con éxito')
+                # log
+                add_log(usuario, 'update', evento.folio, 'evento', 
+                    '{} {} {}'.format(usuario.get_full_name(), action_messages_log['update'], verbose_object['evento'])
+                )
             return redirect('page:eventos')
         else:
             fevento = fEventos(instance = evento)
@@ -422,9 +531,18 @@ def vEventosEditar(request, folio):
         messages.error(request, action_messages['error'])
     return redirect('page:eventos')
 
-
-
-
+# functions for LogInfo
+def add_log(user, action, folio, object_type, message):
+    try:
+        Loginfo.objects.create(
+            usuario = user, 
+            accion = action, 
+            folio_objeto = folio, 
+            tipo_objeto = object_type, 
+            mensaje = message
+        )
+    except Exception as e:
+        print(e)
 
 
 
