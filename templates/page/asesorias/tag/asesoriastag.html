@@ -1,0 +1,32 @@
+{% load static %}
+<div class="container">
+    <div class="row flex">
+        {% for asesoria in asesorias %}
+        <div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease"
+            data-aos-delay="300">
+            <div class="row">
+                {% comment %}<img src="{% get_media_prefix %}{{asesoria.media.first.media}}" alt="" class="svg-advisory">{% endcomment %}
+                <img src="static/images/handshake.svg" alt="" class="svg-advisory">
+            </div>
+            {% if ase_for == 'admin' %}
+            <div class="row">
+                <a href="{% url 'page:edAsesoria' asesoria.folio %}" class="btn-small blue"><i
+                        class="material-icons">edit</i></a>
+                <button data-url="{% url 'page:eAsesoria' asesoria.folio %}" class="btn-small red delete-advisory"><i
+                        class="material-icons">close</i></button>
+                {% if not asesoria.is_published %}
+                <button data-url="{% url 'page:pAsesoria' asesoria.folio %}"
+                    class="btn-small blue publish-advisory">Publicar</button>
+                {% else %}
+                <button data-url="{% url 'page:oAsesoria' asesoria.folio %}"
+                    class="btn-small blue hide-advisory">Ocultar</button>
+                {% endif %}
+            </div>
+            {% endif %}
+            <h6 class="text-header"><b>{{asesoria.titulo|upper}}</b></h6>
+            <p>{{asesoria.contenido}}</p>
+            <div uk-dropdown="mode: click; pos: top-center">{{asesoria.extra}}</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

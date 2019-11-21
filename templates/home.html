@@ -1,10 +1,13 @@
 {% load static %}
+{% load customtags %}
 <!DOCTYPE html>
-<html>
+<html lang="es-mx">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon-esencia-dorado.ico' %}" />
+	<title>Esencia Tabasco</title>
 	<style>
 		#preloader {
 			position: fixed;
@@ -26,6 +29,10 @@
 			transform-origin: center;
 		}
 
+		.card-panel {
+			height: 300px;
+		}
+
 		/* Heart beat animation */
 		@keyframes beat {
 			to {
@@ -42,7 +49,7 @@
 
 <body>
 	<div id="preloader">
-		<img src="{% static 'images/logo-esencia-dorado-min.png' %}" alt="" id="loader" width="40px">
+		<img src=" {% static 'images/logo-esencia-dorado-min.png' %}" alt="" id="loader" width="40px">
 	</div>
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous"
@@ -52,7 +59,7 @@
 			<nav>
 				<div class="nav-wrapper container">
 					<a href="#!" class="brand-logo"> <img class="responsive-img logo-img"
-							src="{% static 'images/logo-esencia-blanco.png'%}" alt=""></a>
+							src="{% static 'images/logo-esencia-blanco.png' %}" alt=""></a>
 					<a href="#" data-target="menu-mobile" class="sidenav-trigger">
 						<i class="material-icons">menu</i>
 					</a>
@@ -74,171 +81,27 @@
 	</header>
 	<main>
 		<section id="video-container">
-			<video autoplay loop id="video-background">
-				<source src="{% static 'videos/video-background.mp4' %}" type="video/webm">
+			<video autoplay loop playsinline muted id="video-background">
+				<source src="{% static 'videos/video-background.mp4' %}" type="video/mp4">
+				Tu navegador no admite el elemento <code>video</code>.
 			</video>
 			<div class="header-overlay"></div>
 			<div class="text-video" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease">
 				<p>Comercializa y promueve tu marca con el distintivo <b class="text-header">Esencia Tabasco</b>, para
 					fortalecer
 					el posicionamiento y lanzamiento de tu empresa </p>
-				<a class="btn-large btn-dorado" href="#">Regístrate</a>
+				<a class="btn-large btn-dorado" href="http://esencia.tabasco.gob.mx/site/registro.html">Regístrate</a>
+			</div>
+		</section>
+		<section class="section-container special-section">
+			<div class="container center-align">
+				<h5 class="white-text">Consulte las <b><a style="text-decoration: underline !important;"
+							href="#modal-reglas-uso" uk-toggle>reglas de uso aquí</a></b>
+					de Esencia Tabasco</h5>
 			</div>
 		</section>
 		<section id="parent-section">
-			<section class="section-container section-container-color">
-				<div class="container">
-					<div class="row">
-						<div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-right"
-							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="400">
-							<div class="uk-visible-toggle overflow-img" tabindex="-1"
-								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
-								<ul class="uk-slideshow-items">
-									<li>
-										<img src="{% static 'images/page/4b8255ef-0d15-4888-b7d4-8addeae371c0.jpg' %}"
-											alt="" class="responsive-img z-depth-3" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg'%}"
-											alt="" class="responsive-img z-depth-3" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/d5a4e9a9-fddd-4798-b076-2edb72d57994.jpg' %}"
-											alt="" class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/EHmsM2bX0AAafni.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/EHVMjLrXkAIHF2W.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/f7be5308-b6bb-421c-a0a9-40acf077fe37.jpg' %}"
-											alt="" class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/fd3e454d-945c-48e2-97a9-295a6d31a5fb.jpg' %}"
-											alt="" class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/EGthB44X4AAP-67.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-								</ul>
-								<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
-									uk-slidenav-previous uk-slideshow-item="previous"></a>
-								<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#"
-									uk-slidenav-next uk-slideshow-item="next"></a>
-							</div>
-						</div>
-						<div class="col l6 m12 s12 text-section-parent" data-aos="fade-right" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="700">
-							<h1 class="center-align text-header text-title-section">285 Empresas registradas</h1>
-							<h5 class="text-subtitle-section"></h5>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="section-container">
-				<div class="container">
-					<div class="row">
-						<div class="col l6 m12 s12 text-section-parent" data-aos="fade-left" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="700">
-							<h1 class="center-align text-header text-title-section">Impulsando a MIPyME's</h1>
-							<h5 class="text-subtitle-section">Hemos equipado a productores tabasqueños con maquinaria
-								para mejorar sus procesos de
-								producción.</h5>
-						</div>
-						<div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-left" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="400">
-							<div class="uk-visible-toggle overflow-img" tabindex="-1"
-								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
-								<ul class="uk-slideshow-items">
-									<li>
-										<img src="{% static 'images/page/EBfzhC1W4AAq5j2.jpg' %}" alt=""
-											class="responsive-img z-depth-3" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/EBfzhC2WwAAwR3L.jpg'%}" alt=""
-											class="responsive-img z-depth-3" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/EB34rXXX4AQ9xUO.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/EB34rXZXkAcZvX_.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/EBfNDn1XoAArnhJ.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/EBfD33DXYAAnCQ5.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/62452005_1070932083103417_147917342234378240_n.jpg' %}"
-											alt="" class="responsive-img" uk-cover>
-									</li>
-								</ul>
-								<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
-									uk-slidenav-previous uk-slideshow-item="previous"></a>
-								<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#"
-									uk-slidenav-next uk-slideshow-item="next"></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="section-container section-container-color">
-				<div class="container">
-					<div class="row">
-						<div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-right"
-							data-aos-duration="500" data-aos-easing="ease" data-aos-delay="400">
-							<div class="uk-visible-toggle overflow-img" tabindex="-1"
-								uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
-								<ul class="uk-slideshow-items">
-									<li>
-										<img src="{% static 'images/page/66008543_2751353871558564_6848119813517082624_n.jpg' %}"
-											alt="" class="responsive-img z-depth-3" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/FB_IMG_1571159285403.jpg'%}" alt=""
-											class="responsive-img z-depth-3" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/69965541_123093702372449_8305152237068353536_n.jpg' %}"
-											alt="" class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/FB_IMG_1571159617616.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-									<li>
-										<img src="{% static 'images/page/FB_IMG_15711568934977434.jpg' %}" alt=""
-											class="responsive-img" uk-cover>
-									</li>
-								</ul>
-								<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
-									uk-slidenav-previous uk-slideshow-item="previous"></a>
-								<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#"
-									uk-slidenav-next uk-slideshow-item="next"></a>
-							</div>
-						</div>
-						<div class="col l6 m12 s12 text-section-parent" data-aos="fade-right" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="700">
-							<h1 class="center-align text-header text-title-section">Distribuye tus productos</h1>
-							<h5 class="text-subtitle-section">Acércate a nosotros, te orientamos para que
-								puedas distribuir tus
-								productos</h5>
-						</div>
-					</div>
-				</div>
-			</section>
+			{% secciones 'public' %}
 			<section class="section-container" id="asesorias">
 				<h1 class="text-header text-title-section center-align" data-aos="zoom-in" data-aos-duration="500"
 					data-aos-easing="ease">
@@ -246,57 +109,7 @@
 				<div class="divider"></div>
 				<br>
 				<br>
-				<div class="container">
-					<div class="row">
-						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="300">
-							<div class="row">
-								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
-							</div>
-							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
-								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
-								nihil non atque nostrum optio.</p>
-							<div uk-dropdown="mode: click">loremememem1.</div>
-						</div>
-						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="300">
-							<div class="row">
-								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
-							</div>
-							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
-								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
-								nihil non atque nostrum optio.</p>
-							<div uk-dropdown="mode: click; pos: top-center">Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor incididunt.</div>
-						</div>
-						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="300">
-							<div class="row">
-								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
-							</div>
-							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
-								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
-								nihil non atque nostrum optio.</p>
-							<div uk-dropdown="mode: click; pos: top-center">Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor incididunt.</div>
-						</div>
-						<div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500"
-							data-aos-easing="ease" data-aos-delay="300">
-							<div class="row">
-								<img src="static/images/handshake.svg" alt="" class="svg-advisory">
-							</div>
-							<h6 class="text-header"><b>ASESORÍA Y REGISTRO A ESENCIA TABASCO</b></h6>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quasi unde, labore at
-								adipisci est incidunt molestias modi suscipit ad cum mollitia maxime alias delectus
-								nihil non atque nostrum optio.</p>
-							<div uk-dropdown="mode: click; pos: top-center">Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor incididunt.</div>
-						</div>
-					</div>
-				</div>
+				{% asesorias 'public' %}
 			</section>
 			<section class="section-container" id="noticias">
 				<div class="container">
@@ -309,42 +122,7 @@
 						<br>
 						<div class="col l8 s12">
 							<div class="row">
-								<article class="article-notice col l6 m6 s12">
-									<div class="uk-inline  z-depth-2">
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg' %}"
-											alt="" class="responsive-img">
-										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
-											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
-										</div>
-									</div>
-								</article>
-								<article class="article-notice col l6 m6 s12">
-									<div class="uk-inline z-depth-2">
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg' %}"
-											alt="" class="responsive-img">
-										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
-											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
-										</div>
-									</div>
-								</article>
-								<article class="article-notice col l6 m6 s12">
-									<div class="uk-inline z-depth-2">
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg' %}"
-											alt="" class="responsive-img">
-										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
-											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
-										</div>
-									</div>
-								</article>
-								<article class="article-notice col l6 m6 s12">
-									<div class="uk-inline z-depth-2">
-										<img src="{% static 'images/page/182695b2-f17e-46b4-86ea-cb628e039229.jpg' %}"
-											alt="" class="responsive-img">
-										<div class="uk-overlay uk-overlay-primary uk-position-bottom">
-											<h6 class="">Entrega de herramientas para aumentar producción.</h6>
-										</div>
-									</div>
-								</article>
+								{% noticias 'public' %}
 							</div>
 						</div>
 						<div class="col l4 hide-on-med-and-down">
@@ -376,38 +154,11 @@
 							</div>
 						</div>
 					</div>
-					<!-- Events zone -->
 					<div class="row" id="eventos">
 						<h5 class="text-header">PRÓXIMOS EVENTOS</h5><br>
 						<div class="container">
 							<div class="row">
-								<div class="col l3 s12 m6">
-									<div class="card-panel">
-										<h6><b>Cumpleaños</b></h6>
-										<div class="divider"></div>
-										<p><i class="tiny material-icons">event</i>&nbsp;15 de Enero de 2019</p>
-										<p><i class="tiny material-icons">schedule</i>&nbsp;10:00</p>
-										<p><i class="tiny material-icons">place</i>&nbsp;Villahermosa, Tabasco</p>
-									</div>
-								</div>
-								<div class="col l3 s12 m6">
-									<div class="card-panel">
-										<h6><b>Cumpleaños</b></h6>
-										<div class="divider"></div>
-										<p><i class="tiny material-icons">event</i>&nbsp;15 de Enero de 2019</p>
-										<p><i class="tiny material-icons">schedule</i>&nbsp;10:00</p>
-										<p><i class="tiny material-icons">place</i>&nbsp;Villahermosa, Tabasco</p>
-									</div>
-								</div>
-								<div class="col l3 s12 m6">
-									<div class="card-panel">
-										<h6><b>Cumpleaños</b></h6>
-										<div class="divider"></div>
-										<p><i class="tiny material-icons">event</i>&nbsp;15 de Enero de 2019</p>
-										<p><i class="tiny material-icons">schedule</i>&nbsp;10:00</p>
-										<p><i class="tiny material-icons">place</i>&nbsp;Villahermosa, Tabasco</p>
-									</div>
-								</div>
+								{% eventos 'public' %}
 							</div>
 						</div>
 					</div>
@@ -444,34 +195,35 @@
 		<footer class="page-footer">
 			<div class="container">
 				<div class="row">
-					<div class="col l6 s12">
-						<img src="static/images/SEDEC_logo-04.png" width="190" height="150" alt="">
-					</div>
-					<div class="col l4 offset-l2 s12">
-						<!-- <h5 class="white-text">Links</h5>
-							<ul>
-								<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-								<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-								<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-								<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-							</ul> -->
+					<div class="col l4 s12">
+						<div class="valign-wrapper">
+							<img src="{% static 'images/SEDEC_logo-04.png' %}" class="responsive-img" width="70%"
+								alt="">
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="footer-copyright">
 				<div class="container">
-					© | Política de privacidad
-					Sitio diseñado por la Secretaría para el Desarrollo Económico y la Competitividad
-					<a class="grey-text text-lighten-4 right" href="#!">Aviso de privacidad</a>
+					<span style="padding-left: 5px !important;">
+						© | Política de privacidad
+						Sitio diseñado por la Secretaría para el Desarrollo Económico y la Competitividad
+					</span>
 				</div>
 			</div>
 		</footer>
+		<div id="modal-reglas-uso" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" style="width: 100%; height: 100%;">
+				<button class="uk-modal-close-outside" type="button" uk-close></button>
+				<iframe src="{% static 'images/reglas_uso.pdf#page=1&zoom=100'  %}" width="100%" height="100%"></iframe>
+			</div>
+		</div>
 	</main>
+	<script src="{% static 'js/app.js' %}"></script>
 	<script src="{% static 'aos/aos.js' %}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
 	<script src="{% static 'materialize/js/materialize.min.js' %}"></script>
-	<script src="{% static 'js/app.js' %}"></script>
 </body>
 
 </html>

@@ -1,0 +1,68 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load customtags %}
+{% block title %}Esencia Landing Page | Secciones{% endblock %}
+{% block maincontent %}
+<div class="container">
+    <br>
+    <br>
+    <h4 class="title-color">Editando sección</h4>
+    <div class="divider"></div>
+    <br>
+    <form id="form-section" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-field">
+            {{fseccion.titulo}}
+            {{fseccion.titulo.label_tag}}
+        </div>
+        <div class="input-field">
+            {{fseccion.subtitulo}}
+            {{fseccion.subtitulo.label_tag}}
+        </div>
+        <div class="file-field input-field">
+            <div class="btn btn-color">
+                <span>Imágenes</span>
+                {{fmultimedia.media}}
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path" type="text">
+            </div>
+        </div>
+        <div class="row right-align">
+            <a class="btn grey lighten-1" href="{% url 'page:secciones' %}">cancelar</a>
+            <button class="btn btn-color" type="submit">Guardar</button>
+        </div>
+    </form>
+    <br>
+    <h5 class="title-color center-align">Imágenes</h5>
+    <ul class="collapsible">
+        {% for media in seccion.media.all %}
+        <li>
+            <div class="collapsible-header"><i class="material-icons icon-color">image</i>{{media.nombre}}</div>
+            <div class="collapsible-body center-align">
+                <div class="row">
+                    <button data-url="{% url 'page:eMediaSeccion' seccion.folio media.id %}"
+                        class="btn red delete-media-section right"><i class="material-icons">close</i></button>
+                </div>
+                <img src="{% get_media_prefix %}{{media.media}}" alt="" class="responsive-img">
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+{% block extrafunctions %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
+    });
+    document.querySelectorAll('.delete-media-section').forEach(function (e) {
+        e.addEventListener('click', function () {
+            UIkit.modal.confirm('<h6>¿Está seguro(a) de eliminar esta multimedia?</h6>', { labels: { ok: 'Sí, eliminar', cancel: 'Cancelar' } }).then(function () {
+                location.href = e.dataset.url
+            });
+        })
+    })
+</script>
+{% endblock %}

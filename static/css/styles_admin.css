@@ -1,0 +1,129 @@
+html,body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+}
+
+.title-color{
+    color: #B18D62 !important;
+}
+
+/* #preview-page > .section-container:nth-child(odd) {
+    background-color: #F2F2F2;
+} */
+
+.btn-color{
+    background-color: #B18D62 !important;
+}
+
+nav{
+    background-color: rgb(177, 147, 94) !important;
+}
+
+.collection-item i{
+    color: rgb(177, 147, 94) !important;
+}
+
+#preview-page .container{
+    width: 100% !important;
+}
+
+#parent-section{
+    background-color: white;
+}
+
+.section-container{
+    padding: 6%;
+    width: 100%;
+}
+
+.section-container-color{
+    background-color: #F2F2F2;
+}
+
+.text-header{
+    color: rgb(177, 147, 94); 
+}
+
+.text-title-section{
+    font-size: 4vw;
+}
+
+.text-section-parent{
+    padding: 0 6% 0 6% !important;
+}
+
+.text-subtitle-section{
+    font-size: 2vw;
+    text-align: center;
+}
+
+.overflow-color{
+    background-color: #B18D62;
+}
+
+.overflow-img{
+    position: relative;
+    top: 10px;
+}
+
+a{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.icon-color{
+    color: #B18D62 !important;
+}
+
+/* .advisory-container{
+    align-self: center;
+} */
+
+.datepicker-modal, .timepicker-modal{
+    z-index: 99999 !important;
+}
+
+.flex {
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+.advisory-container p{
+    cursor: pointer;
+}
+
+.advisory-container p{
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.svg-advisory{
+    background-color: rgba(193, 154, 107, 0.2);
+    border-radius: 50%;
+    padding: 15px;
+    width: 80px;
+}
+
+.article-notice{
+    margin-bottom: 20px;
+}
+
+.article-notice img{
+    width: 100% !important;
+    height: 250px;
+}
+
+@media (max-width: 600px){
+    .article-notice img{
+        width: 100% !important;
+        height: auto;
+    }
+    
+}
+
+.card-panel .material-icons{
+    color: rgb(177, 147, 94);
+}

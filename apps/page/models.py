@@ -1,64 +1,72 @@
 # Django
 from django.contrib.auth.models import User
+from django.utils import timezone
 from django.db import models 
 
-class Eventos(models.Model):
-    folio = models.CharField(max_length = 10)
-    titulo = models.CharField(max_length = 100)
-    fecha = models.DateTimeField()
-    created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField(null = True)
-    deleted_at = models.DateTimeField(null = True)
-    created_by = models.OneToOneField(User, on_delete = models.PROTECT, related_name = 'created_events')
-    updated_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'updated_events')
-    deleted_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'deleted_events')
+class Loginfo(models.Model):
+    usuario = models.ForeignKey(User, on_delete = models.PROTECT, related_name = 'logs_usuario')
+    fecha = models.DateTimeField(auto_now = True)
+    accion = models.CharField(max_length = 50)
+    folio_objeto = models.CharField(max_length = 10)
+    tipo_objeto = models.CharField(max_length = 50)
+    mensaje = models.CharField(max_length = 100)
 
-class Secciones(models.Model):
-    orientation_choices = [
-        (True, 'Derecha'),
-        (False, 'Izquierda')
-    ]
-    folio = models.CharField(max_length = 10)
-    titulo = models.CharField(max_length = 100)
-    subtitulo = models.CharField(max_length = 150)
-    orientacion = models.BooleanField(default = True, choices = orientation_choices)
-    imagen = models.ImageField(upload_to = 'secciones/')
+class ExtraInfo(models.Model):
+    folio = models.CharField(max_length = 10, unique = True)
+    is_published = models.BooleanField(default = False)
+    is_disabled = models.BooleanField(default = False)
     created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField(null = True)
-    deleted_at = models.DateTimeField(null = True)
-    created_by = models.OneToOneField(User, on_delete = models.PROTECT, related_name = 'created_sections')
-    updated_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'updated_sections')
-    deleted_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'deleted_sections')
 
-class Asesorias_Tramites(models.Model):
-    folio = models.CharField(max_length = 10)
-    titulo = models.CharField(max_length = 100)
-    subtitulo = models.CharField(max_length = 150)
-    imagen = models.ImageField(upload_to = 'asesorias_tramites/')
-    created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField()
-    deleted_at = models.DateTimeField()
-    created_by = models.OneToOneField(User, on_delete = models.PROTECT, related_name = 'created_advice')
-    updated_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'updated_advice')
-    deleted_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'deleted_advice')
+    class Meta:
+        ordering = ['created_at']
+        abstract = True
+    
+    def eliminar(self):
+        self.is_disabled = True
+        self.is_published = False
+        self.save()
+    
+    def publicar(self):
+        self.is_published = True
+        self.save()
+    
+    def ocultar(self):
+        self.is_published = False
+        self.save()
 
-class Noticias(models.Model):
-    folio = models.CharField(max_length = 10)
-    titulo = models.CharField(max_length = 100)
-    contenido = models.CharField(max_length = 150)
-    imagen = models.ImageField(upload_to = 'noticias/')
-    created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField()
-    deleted_at = models.DateTimeField()
-    created_by = models.OneToOneField(User, on_delete = models.PROTECT, related_name = 'created_news')
-    updated_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'updated_news')
-    deleted_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'deleted_news')
+class Multimedias(models.Model):
+    media = models.ImageField(upload_to = '')
+    nombre = models.CharField(max_length = 200)
 
-class Banner(models.Model):
+    def save(self, *args, **kwargs):
+        self.nombre = self.media.name
+        super().save(*args, **kwargs)  
+
+class Eventos(ExtraInfo):
+    titulo = models.CharField('Título', max_length = 100)
+    fecha = models.DateField('Fecha')
+    hora = models.TimeField('Hora')
+    lugar = models.CharField('Lugar', max_length = 50)
+    media = models.ManyToManyField(Multimedias, related_name = 'media_eventos')
+
+    class Meta(ExtraInfo.Meta):
+        ordering = ['fecha', 'hora']
+
+class Secciones(ExtraInfo):
+    titulo = models.CharField('Título', max_length = 30)
+    subtitulo = models.CharField('Subtítulo', max_length = 80)
+    media = models.ManyToManyField(Multimedias, related_name = 'media_secciones')
+
+class Asesorias_Tramites(ExtraInfo):
+    titulo = models.CharField('Título', max_length = 50)
+    contenido = models.CharField('Contenido', max_length = 200, default = '')
+    extra = models.CharField('Contenido extra', max_length = 400, null = True, blank = True, default = '')
+    media = models.ManyToManyField(Multimedias, related_name = 'media_asesorias')
+
+class Noticias(ExtraInfo):
+    titulo = models.CharField('Título' ,max_length = 100)
+    contenido = models.CharField('Contenido', max_length = 150)
+    media = models.ManyToManyField(Multimedias, related_name = 'media_noticias')
+
+class Banner(ExtraInfo):
     multimedia = models.FileField(upload_to = 'banner/')
-    created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField()
-    deleted_at = models.DateTimeField()
-    created_by = models.OneToOneField(User, on_delete = models.PROTECT, related_name = 'created_banner')
-    updated_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'updated_banner')
-    deleted_by = models.OneToOneField(User, null = True, on_delete = models.PROTECT, related_name = 'deleted_banner')

@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load customtags %}
+{% block title %}Esencia Landing Page | Eventos{% endblock %}
+{% block maincontent %}
+<div class="container">
+    <br>
+    <br>
+    <h4 class="title-color">Editando evento</h4>
+    <div class="divider"></div>
+    <br>
+    <form id="form-event" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-field">
+            {{fevento.titulo}}
+            {{fevento.titulo.label_tag}}
+        </div>
+        <div class="row">
+            <div class="col l6">
+                <div class="input-field">
+                    {{fevento.fecha}}
+                    {{fevento.fecha.label_tag}}
+                </div>
+            </div>
+            <div class="col l6">
+                <div class="input-field">
+                    {{fevento.hora}}
+                    {{fevento.hora.label_tag}}
+                </div>
+            </div>
+        </div>
+        <div class="input-field">
+            {{fevento.lugar}}
+            {{fevento.lugar.label_tag}}
+        </div>
+        <div class="file-field input-field">
+            <div class="btn btn-color">
+                <span>Imagen</span>
+                {{fmultimedia.media}}
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path" type="text">
+            </div>
+        </div>
+        <div class="row right-align">
+            <a class="btn grey lighten-1" href="{% url 'page:noticias' %}">cancelar</a>
+            <button class="btn btn-color" type="submit">Guardar</button>
+        </div>
+    </form>
+    <br>
+    <h5 class="title-color center-align">Imágenes</h5>
+    <ul class="collapsible">
+        {% for media in noticia.media.all %}
+        <li>
+            <div class="collapsible-header"><i class="material-icons icon-color">image</i>{{media.nombre}}</div>
+            <div class="collapsible-body center-align">
+                <img src="{% get_media_prefix %}{{media.media}}" alt="" class="responsive-img">
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+{% block extrafunctions %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var datepicker = document.querySelectorAll('.datepicker');
+        var instances_date = M.Datepicker.init(datepicker, {
+            format: 'yyyy-mm-dd',
+            container: 'body',
+            i18n: {
+                months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthsShort: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                weekdaysAbbrev: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekdays: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                weekdaysShort: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                cancel: 'Cancelar',
+                done: 'Elegir'
+            }
+        })
+        var timepicker = document.querySelectorAll('.timepicker')
+        var instances_time = M.Timepicker.init(timepicker, { twelveHour: false, container: 'body' });
+    });
+</script>
+{% endblock %}

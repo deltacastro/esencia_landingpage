@@ -1,0 +1,79 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load customtags %}
+{% block title %}Esencia Landing Page | Noticias{% endblock %}
+{% block maincontent %}
+<section id="preview-page">
+    <section class="section-container">
+        <div class="row">
+            <div class="col offset-l2 l8 s12">
+                {% noticias 'admin' %}
+            </div>
+        </div>
+    </section>
+</section>
+<div id="modal-news" uk-modal>
+    <div class="uk-modal-dialog">
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title title-color">Nueva noticia</h2>
+        </div>
+        <div class="uk-modal-body">
+            <form id="form-news" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-field">
+                    {{fnoticia.titulo}}
+                    {{fnoticia.titulo.label_tag}}
+                </div>
+                <div class="file-field input-field">
+                    <div class="btn btn-color">
+                        <span>Imagen</span>
+                        {{fmultimedia.media}}
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path" type="text">
+                    </div>
+                </div>
+                <button type="submit" id="save-news" class="hide"></button>
+            </form>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+            <button class="btn btn-color btn-trigger" data-target="#save-news">Guardar</button>
+        </div>
+    </div>
+</div>
+<div class="fixed-action-btn">
+    <a href="#modal-news" class="btn-floating btn-large btn-color" uk-toggle><i class="material-icons">add</i></a>
+</div>
+{% endblock %}
+{% block extrafunctions %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init()
+        document.querySelector('.btn-trigger').addEventListener('click', function () {
+            document.querySelector(this.dataset.target).click()
+        })
+        document.querySelectorAll('.delete-news').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de eliminar esta noticia?</h6>', { labels: { ok: 'Sí, eliminar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+        document.querySelectorAll('.publish-news').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de publicar esta noticia?</h6>', { labels: { ok: 'Sí, publicar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+        document.querySelectorAll('.hide-news').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de ocultar esta noticia?</h6>', { labels: { ok: 'Sí, ocultar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+    })
+</script>
+{% endblock %}

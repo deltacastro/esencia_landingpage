@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block maincontent %}
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <ul class="collection">
+        <li class="collection-item">
+            <div>Secciones<a href="{% url 'page:secciones' %}" class="secondary-content"><i
+                        class="material-icons">send</i></a></div>
+        </li>
+        <li class="collection-item">
+            <div>Asesorías y Trámites<a href="{% url 'page:asesorias' %}" class="secondary-content"><i
+                        class="material-icons">send</i></a></div>
+        </li>
+        <li class="collection-item">
+            <div>Noticias<a href="{% url 'page:noticias' %}" class="secondary-content"><i
+                        class="material-icons">send</i></a></div>
+        </li>
+        <li class="collection-item">
+            <div>Eventos<a href="{% url 'page:eventos' %}" class="secondary-content"><i
+                        class="material-icons">send</i></a></div>
+        </li>
+        <!-- <li class="collection-item">
+            <div>Mensajes<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+        </li>
+        <li class="collection-item">
+            <div>Video background<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+        </li>
+        <li class="collection-item">
+            <div>Footer<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+        </li> -->
+    </ul>
+</div>
+{% endblock %}
+{% block powered %}{% endblock %}

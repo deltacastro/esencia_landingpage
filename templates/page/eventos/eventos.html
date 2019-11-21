@@ -1,0 +1,113 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load customtags %}
+{% block title %}Esencia Landing Page | Eventos{% endblock %}
+{% block maincontent %}
+<section id="preview-page">
+    <section class="section-container">
+        <div class="row">
+            {% eventos 'admin' %}
+        </div>
+    </section>
+</section>
+<div id="modal-event" uk-modal>
+    <div class="uk-modal-dialog">
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title title-color">Nuevo evento</h2>
+        </div>
+        <div class="uk-modal-body">
+            <form id="form-news" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-field">
+                    {{fevento.titulo}}
+                    {{fevento.titulo.label_tag}}
+                </div>
+                <div class="row">
+                    <div class="col l6">
+                        <div class="input-field">
+                            {{fevento.fecha}}
+                            {{fevento.fecha.label_tag}}
+                        </div>
+                    </div>
+                    <div class="col l6">
+                        <div class="input-field">
+                            {{fevento.hora}}
+                            {{fevento.hora.label_tag}}
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field">
+                    {{fevento.lugar}}
+                    {{fevento.lugar.label_tag}}
+                </div>
+                {% comment %}
+                <div class="file-field input-field">
+                    <div class="btn btn-color">
+                        <span>Imagen</span>
+                        {{fmultimedia.media}}
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path" type="text">
+                    </div>
+                </div>
+                {% endcomment %}
+                <button type="submit" id="save-event" class="hide"></button>
+            </form>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+            <button class="btn btn-color btn-trigger" data-target="#save-event">Guardar</button>
+        </div>
+    </div>
+</div>
+<div class="fixed-action-btn">
+    <a href="#modal-event" class="btn-floating btn-large btn-color" uk-toggle><i class="material-icons">add</i></a>
+</div>
+{% endblock %}
+{% block extrafunctions %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init()
+        var datepicker = document.querySelectorAll('.datepicker');
+        var instances_date = M.Datepicker.init(datepicker, {
+            format: 'yyyy-mm-dd',
+            container: 'body',
+            i18n: {
+                months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthsShort: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                weekdaysAbbrev: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekdays: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                weekdaysShort: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                cancel: 'Cancelar',
+                done: 'Elegir'
+            }
+        })
+        var timepicker = document.querySelectorAll('.timepicker')
+        var instances_time = M.Timepicker.init(timepicker, { twelveHour: false, container: 'body' });
+        document.querySelector('.btn-trigger').addEventListener('click', function () {
+            document.querySelector(this.dataset.target).click()
+        })
+        document.querySelectorAll('.delete-event').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de eliminar este evento?</h6>', { labels: { ok: 'Sí, eliminar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+        document.querySelectorAll('.publish-event').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de publicar este evento?</h6>', { labels: { ok: 'Sí, publicar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+        document.querySelectorAll('.hide-event').forEach(function (e) {
+            e.addEventListener('click', function () {
+                UIkit.modal.confirm('<h6>¿Está seguro(a) de ocultar este evento?</h6>', { labels: { ok: 'Sí, ocultar', cancel: 'Cancelar' } }).then(function () {
+                    location.href = e.dataset.url
+                });
+            })
+        })
+    })
+</script>
+{% endblock %}

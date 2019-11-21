@@ -1,0 +1,75 @@
+{% load static %}
+{% load customtags %}
+{% for seccion in secciones %}
+<section class="section-container {% if forloop.counter0|rightOrLeft %}section-container-color{% endif %}">
+    <div class="container">
+        {% if sec_for == 'admin' %}
+        <div class="row {% if not forloop.counter0|rightOrLeft %}right{% endif %}" data-aos="fade-in"
+            data-aos-duration="500" data-aos-easing="ease" data-aos-delay="700">
+            <a href="{% url 'page:edSeccion' seccion.folio %}" class="btn-small blue"><i
+                    class="material-icons">edit</i></a>
+            <button data-url="{% url 'page:eSeccion' seccion.folio %}" class="btn-small red delete-section"><i
+                    class="material-icons">close</i></button>
+            {% if not seccion.is_published %}
+            <button data-url="{% url 'page:pSeccion' seccion.folio %}"
+                class="btn-small blue publish-section">Publicar</button>
+            {% else %}
+            <button data-url="{% url 'page:oSeccion' seccion.folio %}"
+                class="btn-small blue hide-section">Ocultar</button>
+            {% endif %}
+        </div>
+        {% endif %}
+        <div class="row">
+            {% if forloop.counter0|rightOrLeft %}
+            <div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-right" data-aos-duration="500"
+                data-aos-easing="ease" data-aos-delay="400">
+                <div class="uk-visible-toggle overflow-img" tabindex="-1"
+                    uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
+                    <ul class="uk-slideshow-items">
+                        {% for media in seccion.media.all %}
+                        <li>
+                            <img src="{% get_media_prefix %}{{media.media}}" alt="" class="responsive-img z-depth-3"
+                                uk-cover>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                        uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                        uk-slideshow-item="next"></a>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 text-section-parent" data-aos="fade-right" data-aos-duration="500"
+                data-aos-easing="ease" data-aos-delay="700">
+                <h1 class="center-align text-header text-title-section">{{seccion.titulo}}</h1>
+                <h5 class="text-subtitle-section">{{seccion.subtitulo}}</h5>
+            </div>
+            {% else %}
+            <div class="col l6 m12 s12 text-section-parent" data-aos="fade-left" data-aos-duration="500"
+                data-aos-easing="ease" data-aos-delay="700">
+                <h1 class="center-align text-header text-title-section">{{seccion.titulo}}</h1>
+                <h5 class="text-subtitle-section">{{seccion.subtitulo}}</h5>
+            </div>
+            <div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-left" data-aos-duration="500"
+                data-aos-easing="ease" data-aos-delay="400">
+                <div class="uk-visible-toggle overflow-img" tabindex="-1"
+                    uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000">
+                    <ul class="uk-slideshow-items">
+                        {% for media in seccion.media.all %}
+                        <li>
+                            <img src="{% get_media_prefix %}{{media.media}}" alt="" class="responsive-img z-depth-3"
+                                uk-cover>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                        uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                        uk-slideshow-item="next"></a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endfor %}
