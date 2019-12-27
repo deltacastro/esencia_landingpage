@@ -7,6 +7,6 @@ from apps.page.views import vLogin, vLogout
 urlpatterns = [
     path('', main),
     path('page/', include('apps.page.urls', namespace = 'page')),
-    path('login/', vLogin, name = 'login'),
-    path('logout/', vLogout, name = 'logout'),
+    path('page/login/', vLogin, name = 'login'),
+    path('page/logout/', vLogout, name = 'logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
