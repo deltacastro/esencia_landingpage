@@ -5,8 +5,7 @@
         <div class="col l6 m6 s12 advisory-container" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease"
             data-aos-delay="300">
             <div class="row">
-                {% comment %}<img src="{% get_media_prefix %}{{asesoria.media.first.media}}" alt="" class="svg-advisory">{% endcomment %}
-                <img src="static/images/handshake.svg" alt="" class="svg-advisory">
+                <img src="{% get_media_prefix %}{{asesoria.media.first.media}}" alt="" class="svg-advisory">
             </div>
             {% if ase_for == 'admin' %}
             <div class="row">
