@@ -1,6 +1,17 @@
+@font-face {
+    font-family: 'MuliLight';
+    src: url('/static/fonts/Muli-Light.ttf');
+}
+
+@font-face {
+    font-family: 'CocogoosePro';
+    src: url('/static/fonts/Cocogoose\ Pro-trial.ttf');
+}
+
 html, body {
     margin: 0 !important;
     padding: 0 !important;
+    /* font-family: 'MuliLight'; */
     overflow-x: hidden;
 }
 
@@ -41,6 +52,10 @@ img {
     width: 70%;
     z-index: 999;
 }
+
+/* #video-container>.text-video>p {
+    font-family: 'MuliLight';
+} */
 
 .sidenav {
     background-color: rgba(39, 16, 0, 0.8) !important;
@@ -232,3 +247,7 @@ a {
     width: 100% !important;
     height: 250px;
 }
+
+/* .txt-coco {
+    font-family: 'CocogoosePro';
+} */
