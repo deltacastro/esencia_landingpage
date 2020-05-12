@@ -43,12 +43,26 @@
                 data-aos-easing="ease" data-aos-delay="700">
                 <h1 class="center-align text-header text-title-section">{{seccion.titulo}}</h1>
                 <h5 class="text-subtitle-section">{{seccion.subtitulo}}</h5>
+                {% if seccion.boton and seccion.txt_boton %}
+                <br>
+                <div class="row center-align">
+                    <a href="{% if seccion.link_boton %}{{seccion.link_boton}}{% else %}#!{% endif %}"
+                        class="btn-large btn-color center-align">{{seccion.txt_boton}}</a>
+                </div>
+                {% endif %}
             </div>
             {% else %}
             <div class="col l6 m12 s12 text-section-parent" data-aos="fade-left" data-aos-duration="500"
                 data-aos-easing="ease" data-aos-delay="700">
                 <h1 class="center-align text-header text-title-section">{{seccion.titulo}}</h1>
                 <h5 class="text-subtitle-section">{{seccion.subtitulo}}</h5>
+                {% if seccion.boton and seccion.txt_boton %}
+                <br>
+                <div class="row center-align">
+                    <a href="{% if seccion.link_boton %}{{seccion.link_boton}}{% else %}#!{% endif %}"
+                        class="btn-large btn-color center-align">{{seccion.txt_boton}}</a>
+                </div>
+                {% endif %}
             </div>
             <div class="col l6 offset-m2 m8 s12 overflow-color" data-aos="fade-left" data-aos-duration="500"
                 data-aos-easing="ease" data-aos-delay="400">

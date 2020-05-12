@@ -45,7 +45,7 @@ class fMultimediasSimpleOpcional(fMultimediasSimple, fMultimediasOpcional):
 class fSecciones(forms.ModelForm):
     class Meta:
         model = Secciones
-        fields = ['titulo', 'subtitulo']
+        fields = ['titulo', 'subtitulo', 'top', 'boton', 'txt_boton', 'link_boton']
 
 class fAsesorias_Tramites(forms.ModelForm):
     class Meta:

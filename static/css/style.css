@@ -248,6 +248,10 @@ a {
     height: 250px;
 }
 
+.btn-color {
+    background-color: #B18D62 !important;
+}
+
 /* .txt-coco {
     font-family: 'CocogoosePro';
 } */

@@ -9,9 +9,9 @@ register = template.Library()
 @register.inclusion_tag('page/secciones/tag/secciontag.html')
 def secciones(sec_for):
     if sec_for == 'public':
-        secciones = Secciones.objects.filter(is_published = True)
+        secciones = Secciones.objects.filter(is_published = True).order_by('-top')
     if sec_for == 'admin':
-        secciones = Secciones.objects.filter(is_disabled = False)
+        secciones = Secciones.objects.filter(is_disabled = False).order_by('-top')
     return {'secciones' : secciones, 'sec_for': sec_for}
 
 @register.inclusion_tag('page/asesorias/tag/asesoriastag.html')

@@ -28,6 +28,33 @@
                 <input class="file-path" type="text">
             </div>
         </div>
+        <div class="input-field">
+            <p>
+                <label>
+                    {{fseccion.top}}
+                    <span>{{fseccion.top.label}}</span>
+                </label>
+            </p>
+        </div>
+        <br>
+        <h6 class="title-color">Botón</h6>
+        <div class="divider"></div>
+        <div class="input-field">
+            <p>
+                <label>
+                    {{fseccion.boton}}
+                    <span>{{fseccion.boton.label}}</span>
+                </label>
+            </p>
+        </div>
+        <div class="input-field">
+            {{fseccion.txt_boton}}
+            {{fseccion.txt_boton.label_tag}}
+        </div>
+        <div class="input-field">
+            {{fseccion.link_boton}}
+            {{fseccion.link_boton.label_tag}}
+        </div>
         <div class="row right-align">
             <a class="btn grey lighten-1" href="{% url 'page:secciones' %}">cancelar</a>
             <button class="btn btn-color" type="submit">Guardar</button>

@@ -56,6 +56,10 @@ class Secciones(ExtraInfo):
     titulo = models.CharField('Título', max_length = 30)
     subtitulo = models.CharField('Subtítulo', max_length = 80)
     media = models.ManyToManyField(Multimedias, related_name = 'media_secciones')
+    top = models.BooleanField('Fijar al principio', default = False)
+    boton = models.BooleanField('Activar botón', default = False)
+    txt_boton = models.CharField('Texto del botón', max_length = 15, null = True, blank = True)
+    link_boton = models.URLField('Link del botón', null = True, blank = True)
 
 class Asesorias_Tramites(ExtraInfo):
     titulo = models.CharField('Título', max_length = 50)
