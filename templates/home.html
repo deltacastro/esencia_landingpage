@@ -208,7 +208,7 @@
 						</div>
 					</div>
 					<div class="col l8 s12">
-						<h6 class="white-text"><a href="#modal-aviso-priv" uk-toggle>Aviso de
+						<h6 class="white-text"><a target="__blank" href="{% url 'aviso' %}">Aviso de
 								privacidad</a></h6>
 					</div>
 				</div>
@@ -227,13 +227,13 @@
 				<iframe src="{% static 'images/reglas_uso.pdf' %}#page=1&zoom=100" width="100%" height="100%"></iframe>
 			</div>
 		</div>
-		<div id="modal-aviso-priv" class="uk-flex-top" uk-modal>
+		<!-- <div id="modal-aviso-priv" class="uk-flex-top" uk-modal>
 			<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" style="width: 100%; height: 100%;">
 				<button class="uk-modal-close-outside" type="button" uk-close></button>
 				<iframe src="{% static 'images/aviso_privacidad.pdf' %}#page=1&zoom=100" width="100%"
 					height="100%"></iframe>
 			</div>
-		</div>
+		</div> -->
 	</main>
 	<script src="{% static 'js/app.js' %}"></script>
 	<script src="{% static 'aos/aos.js' %}"></script>

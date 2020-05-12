@@ -29,6 +29,9 @@ verbose_object = {
 def main(request):
     return render(request, 'home.html')
 
+def aviso_privacidad(request):
+    return render(request, 'base/aviso_privacidad.html')
+
 def vLogin(request):
     if request.user.is_authenticated:
 	    return redirect('logout')
